@@ -9,8 +9,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var selectedTab = 0
+    
     var body: some View {
-        Text("Hello World")
+        VStack {
+            TabView(selection: $selectedTab) {
+                RamenListView()
+                    .tabItem {
+                        Image("explore").renderingMode(.template)
+                        Text("探索")
+                }
+                Text("The content of the first view")
+                    .tabItem {
+                        Image("plan").renderingMode(.template)
+                        Text("計畫")
+                }
+                Text("The content of the second view")
+                    .tabItem {
+                        Image("profile").renderingMode(.template)
+                        Text("個人")
+                }
+                
+            }
+        }
     }
 }
 

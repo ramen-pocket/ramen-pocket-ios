@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A3246EB172003EAEC8 /* RamenListView.swift */; };
+		B17333A6246EB1DD003EAEC8 /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A5246EB1DD003EAEC8 /* Ramen.swift */; };
+		B17333A8246EB213003EAEC8 /* RamenListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A7246EB213003EAEC8 /* RamenListItem.swift */; };
+		B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A9246EB243003EAEC8 /* RamenDetailView.swift */; };
 		B1E9C65F2446F22300933874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C65E2446F22300933874 /* AppDelegate.swift */; };
 		B1E9C6612446F22300933874 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C6602446F22300933874 /* SceneDelegate.swift */; };
 		B1E9C6632446F22400933874 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C6622446F22400933874 /* ContentView.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B17333A3246EB172003EAEC8 /* RamenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListView.swift; sourceTree = "<group>"; };
+		B17333A5246EB1DD003EAEC8 /* Ramen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ramen.swift; sourceTree = "<group>"; };
+		B17333A7246EB213003EAEC8 /* RamenListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListItem.swift; sourceTree = "<group>"; };
+		B17333A9246EB243003EAEC8 /* RamenDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenDetailView.swift; sourceTree = "<group>"; };
 		B1E9C65B2446F22300933874 /* ramen-pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ramen-pocket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E9C65E2446F22300933874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E9C6602446F22300933874 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +109,11 @@
 			children = (
 				B1E9C65E2446F22300933874 /* AppDelegate.swift */,
 				B1E9C6602446F22300933874 /* SceneDelegate.swift */,
+				B17333A3246EB172003EAEC8 /* RamenListView.swift */,
+				B17333A7246EB213003EAEC8 /* RamenListItem.swift */,
+				B17333A9246EB243003EAEC8 /* RamenDetailView.swift */,
 				B1E9C6622446F22400933874 /* ContentView.swift */,
+				B17333A5246EB1DD003EAEC8 /* Ramen.swift */,
 				B1E9C6642446F22600933874 /* Assets.xcassets */,
 				B1E9C6692446F22600933874 /* LaunchScreen.storyboard */,
 				B1E9C66C2446F22600933874 /* Info.plist */,
@@ -267,7 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17333A6246EB1DD003EAEC8 /* Ramen.swift in Sources */,
+				B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */,
+				B17333A8246EB213003EAEC8 /* RamenListItem.swift in Sources */,
 				B1E9C65F2446F22300933874 /* AppDelegate.swift in Sources */,
+				B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */,
 				B1E9C6612446F22300933874 /* SceneDelegate.swift in Sources */,
 				B1E9C6632446F22400933874 /* ContentView.swift in Sources */,
 			);
