@@ -26,14 +26,18 @@ struct RamenListItem: View {
                     .font(.system(size: 22))
                     .bold()
                     .lineLimit(1)
-                Text("營業中").font(.system(size: 16))
                 
                 HStack {
+                   Image("dot")
+                   Text("營業中").font(.system(size: 16))
+                }
+                HStack {
+                    Image("location")
                     Text(ramen.location).font(.system(size: 16))
                 }
                 
                 HStack {
-                    Image(systemName: "info.circle.fill")
+                    Image("info")
                     Text("\(ramen.price), \(ramen.tag.joined(separator: ", "))").font(.system(size: 16))
                 }
 
