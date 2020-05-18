@@ -12,6 +12,10 @@ struct ContentView: View {
     
     @State var selectedTab = 0
     
+    init() {
+        UITabBar.appearance().barTintColor = UIColor.white
+    }
+    
     var body: some View {
         VStack {
             TabView(selection: $selectedTab) {
@@ -30,8 +34,8 @@ struct ContentView: View {
                         Image("profile").renderingMode(.template)
                         Text("個人")
                 }
-                
             }
+            .accentColor(.red)
         }
     }
 }
