@@ -17,7 +17,7 @@ struct RamenListItem: View {
             Image(ramen.image)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 100, height: 100)
+                .frame(width: 108, height: 108)
                 .clipped()
                 .cornerRadius(16, antialiased: true)
             
