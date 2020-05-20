@@ -33,12 +33,12 @@ struct RamenListItem: View {
                 }
                 HStack {
                     Image("location")
-                    Text(ramen.location).font(.system(size: 16))
+                    Text(ramen.address).font(.system(size: 16))
                 }
                 
                 HStack {
                     Image("info")
-                    Text("\(ramen.price), \(ramen.tag.joined(separator: ", "))").font(.system(size: 16))
+                    Text("\(ramen.price), \(ramen.tags.joined(separator: ", "))").font(.system(size: 16))
                 }
 
             }
@@ -48,7 +48,7 @@ struct RamenListItem: View {
 }
 
 struct RamenListItem_Previews: PreviewProvider {
-    static let ramen: Ramen = Ramen(name: "五之神", location: "台北市, 信義區", image: "Ramen1", openTime: ["11:00~15:00", "17:00~22:00"], price: "$$", tag: ["日式", "蝦味"])
+    static let ramen: Ramen = Ramen(name: "五之神", address: "台北市, 信義區", image: "Ramen1", openingTimes: ["11:00~15:00", "17:00~22:00"], price: "$$", tags: ["日式", "蝦味"])
     
     static var previews: some View {
         RamenListItem(ramen: ramen)

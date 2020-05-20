@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1717DDA2472C9AB007D351D /* CommentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DD92472C9AB007D351D /* CommentItem.swift */; };
 		B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A3246EB172003EAEC8 /* RamenListView.swift */; };
 		B17333A6246EB1DD003EAEC8 /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A5246EB1DD003EAEC8 /* Ramen.swift */; };
 		B17333A8246EB213003EAEC8 /* RamenListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A7246EB213003EAEC8 /* RamenListItem.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B1717DD92472C9AB007D351D /* CommentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItem.swift; sourceTree = "<group>"; };
 		B17333A3246EB172003EAEC8 /* RamenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListView.swift; sourceTree = "<group>"; };
 		B17333A5246EB1DD003EAEC8 /* Ramen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ramen.swift; sourceTree = "<group>"; };
 		B17333A7246EB213003EAEC8 /* RamenListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListItem.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				B17333A3246EB172003EAEC8 /* RamenListView.swift */,
 				B17333A7246EB213003EAEC8 /* RamenListItem.swift */,
 				B17333A9246EB243003EAEC8 /* RamenDetailView.swift */,
+				B1717DD92472C9AB007D351D /* CommentItem.swift */,
 				B1E9C6622446F22400933874 /* ContentView.swift */,
 				B17333A5246EB1DD003EAEC8 /* Ramen.swift */,
 				B1E9C6642446F22600933874 /* Assets.xcassets */,
@@ -285,6 +288,7 @@
 				B1E9C65F2446F22300933874 /* AppDelegate.swift in Sources */,
 				B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */,
 				B1E9C6612446F22300933874 /* SceneDelegate.swift in Sources */,
+				B1717DDA2472C9AB007D351D /* CommentItem.swift in Sources */,
 				B1E9C6632446F22400933874 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

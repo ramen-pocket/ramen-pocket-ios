@@ -12,9 +12,9 @@ struct Ramen: Identifiable {
     let id = UUID()
 
     let name: String
-    let location: String
+    let address: String
     let image: String
-    let openTime: [String]
+    let openingTimes: [String]
     let price: String
-    let tag: [String]
+    let tags: [String]
 }
