@@ -28,11 +28,9 @@ struct RamenDetailView: View {
                 buildCommentSection()
                 
                 buildPhotoSection()
-                
-                Spacer()
             }
-            .navigationBarTitle(Text(ramen.name), displayMode: .inline)
         }
+        .navigationBarTitle("", displayMode: .inline)
         
     }
     
