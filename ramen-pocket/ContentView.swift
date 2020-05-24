@@ -24,18 +24,25 @@ struct ContentView: View {
                         Image("explore").renderingMode(.template)
                         Text("探索")
                 }
-                Text("The content of the first view")
+                .tag(0)
+                
+                PlanningView()
                     .tabItem {
                         Image("plan").renderingMode(.template)
                         Text("計畫")
                 }
-                Text("The content of the second view")
+                .tag(1)
+                
+                ProfileView()
                     .tabItem {
                         Image("profile").renderingMode(.template)
                         Text("個人")
                 }
+                .tag(2)
             }
             .accentColor(.red)
+            
+            Spacer()
         }
     }
 }
@@ -43,5 +50,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+extension UINavigationBar {
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 20)
     }
 }
