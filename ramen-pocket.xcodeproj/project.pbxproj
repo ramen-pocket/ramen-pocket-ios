@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AEF06E247A4E0F004046D4 /* ProfileView.swift */; };
 		44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AEF070247A50D5004046D4 /* PlanningView.swift */; };
-		B1717DDA2472C9AB007D351D /* CommentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DD92472C9AB007D351D /* CommentItem.swift */; };
+		B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DD92472C9AB007D351D /* CommentItemView.swift */; };
 		B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A3246EB172003EAEC8 /* RamenListView.swift */; };
 		B17333A6246EB1DD003EAEC8 /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A5246EB1DD003EAEC8 /* Ramen.swift */; };
-		B17333A8246EB213003EAEC8 /* RamenListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A7246EB213003EAEC8 /* RamenListItem.swift */; };
+		B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A7246EB213003EAEC8 /* RamenListItemView.swift */; };
 		B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A9246EB243003EAEC8 /* RamenDetailView.swift */; };
 		B1E9C65F2446F22300933874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C65E2446F22300933874 /* AppDelegate.swift */; };
 		B1E9C6612446F22300933874 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C6602446F22300933874 /* SceneDelegate.swift */; };
@@ -44,10 +44,10 @@
 /* Begin PBXFileReference section */
 		44AEF06E247A4E0F004046D4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		44AEF070247A50D5004046D4 /* PlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningView.swift; sourceTree = "<group>"; };
-		B1717DD92472C9AB007D351D /* CommentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItem.swift; sourceTree = "<group>"; };
+		B1717DD92472C9AB007D351D /* CommentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItemView.swift; sourceTree = "<group>"; };
 		B17333A3246EB172003EAEC8 /* RamenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListView.swift; sourceTree = "<group>"; };
 		B17333A5246EB1DD003EAEC8 /* Ramen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ramen.swift; sourceTree = "<group>"; };
-		B17333A7246EB213003EAEC8 /* RamenListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListItem.swift; sourceTree = "<group>"; };
+		B17333A7246EB213003EAEC8 /* RamenListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListItemView.swift; sourceTree = "<group>"; };
 		B17333A9246EB243003EAEC8 /* RamenDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenDetailView.swift; sourceTree = "<group>"; };
 		B1E9C65B2446F22300933874 /* ramen-pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ramen-pocket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E9C65E2446F22300933874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +90,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B19E6694247BA32E00DAA1EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B17333A3246EB172003EAEC8 /* RamenListView.swift */,
+				B17333A7246EB213003EAEC8 /* RamenListItemView.swift */,
+				B17333A9246EB243003EAEC8 /* RamenDetailView.swift */,
+				B1717DD92472C9AB007D351D /* CommentItemView.swift */,
+				B1E9C6622446F22400933874 /* ContentView.swift */,
+				44AEF06E247A4E0F004046D4 /* ProfileView.swift */,
+				44AEF070247A50D5004046D4 /* PlanningView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B19E6695247BA34E00DAA1EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B17333A5246EB1DD003EAEC8 /* Ramen.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B1E9C6522446F22300933874 = {
 			isa = PBXGroup;
 			children = (
@@ -115,18 +137,12 @@
 			children = (
 				B1E9C65E2446F22300933874 /* AppDelegate.swift */,
 				B1E9C6602446F22300933874 /* SceneDelegate.swift */,
-				B17333A3246EB172003EAEC8 /* RamenListView.swift */,
-				B17333A7246EB213003EAEC8 /* RamenListItem.swift */,
-				B17333A9246EB243003EAEC8 /* RamenDetailView.swift */,
-				B1717DD92472C9AB007D351D /* CommentItem.swift */,
-				B1E9C6622446F22400933874 /* ContentView.swift */,
-				B17333A5246EB1DD003EAEC8 /* Ramen.swift */,
+				B19E6694247BA32E00DAA1EE /* Views */,
+				B19E6695247BA34E00DAA1EE /* Models */,
 				B1E9C6642446F22600933874 /* Assets.xcassets */,
 				B1E9C6692446F22600933874 /* LaunchScreen.storyboard */,
 				B1E9C66C2446F22600933874 /* Info.plist */,
 				B1E9C6662446F22600933874 /* Preview Content */,
-				44AEF06E247A4E0F004046D4 /* ProfileView.swift */,
-				44AEF070247A50D5004046D4 /* PlanningView.swift */,
 			);
 			path = "ramen-pocket";
 			sourceTree = "<group>";
@@ -292,11 +308,11 @@
 				44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */,
 				44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */,
 				B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */,
-				B17333A8246EB213003EAEC8 /* RamenListItem.swift in Sources */,
+				B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */,
 				B1E9C65F2446F22300933874 /* AppDelegate.swift in Sources */,
 				B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */,
 				B1E9C6612446F22300933874 /* SceneDelegate.swift in Sources */,
-				B1717DDA2472C9AB007D351D /* CommentItem.swift in Sources */,
+				B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */,
 				B1E9C6632446F22400933874 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
