@@ -39,10 +39,10 @@ struct ProfileView: View {
                 
                 CardView {
                     VStack {
-                        PanelItemView(label: "我的收藏", icon: Image("collections"), iconColor: Color(hex: "#3CBCF7"), destination: ProfileView())
-                        PanelItemView(label: "歷史評論", icon: Image("comments"), iconColor: Color(hex: "#FAC61D"), destination: ProfileView())
-                        PanelItemView(label: "喜好管理", icon: Image("heart"), iconColor: Color(hex: "#CB4042"), destination: ProfileView())
-                        PanelItemView(label: "設定", icon: Image("settings"), iconColor: Color(hex: "#404040"), destination: ProfileView())
+                        PanelItemView(label: "我的收藏", icon: Image("collections"), iconColor: Color(hex: "#3CBCF7"), destination: CollectionsView())
+                        PanelItemView(label: "歷史評論", icon: Image("comments"), iconColor: Color(hex: "#FAC61D"), destination: CommentsView())
+                        PanelItemView(label: "喜好管理", icon: Image("heart"), iconColor: Color(hex: "#CB4042"), destination: TagManagementView())
+                        PanelItemView(label: "設定", icon: Image("settings"), iconColor: Color(hex: "#404040"), destination: SettingsView())
                         Spacer()
                     }
                 }
