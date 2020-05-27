@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		446B9E18247E58A3009F6E30 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B9E17247E58A3009F6E30 /* Error.swift */; };
 		44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AEF06E247A4E0F004046D4 /* ProfileView.swift */; };
 		44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AEF070247A50D5004046D4 /* PlanningView.swift */; };
 		B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DD92472C9AB007D351D /* CommentItemView.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		446B9E17247E58A3009F6E30 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		44AEF06E247A4E0F004046D4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		44AEF070247A50D5004046D4 /* PlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningView.swift; sourceTree = "<group>"; };
 		B1717DD92472C9AB007D351D /* CommentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItemView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				B1E9C65E2446F22300933874 /* AppDelegate.swift */,
 				B1E9C6602446F22300933874 /* SceneDelegate.swift */,
+				446B9E17247E58A3009F6E30 /* Error.swift */,
 				B19E6694247BA32E00DAA1EE /* Views */,
 				B19E6695247BA34E00DAA1EE /* Models */,
 				B1E9C6642446F22600933874 /* Assets.xcassets */,
@@ -308,6 +311,7 @@
 				44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */,
 				44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */,
 				B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */,
+				446B9E18247E58A3009F6E30 /* Error.swift in Sources */,
 				B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */,
 				B1E9C65F2446F22300933874 /* AppDelegate.swift in Sources */,
 				B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */,
