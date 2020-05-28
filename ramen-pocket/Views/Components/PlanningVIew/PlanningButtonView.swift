@@ -12,6 +12,7 @@ class SheetState: ObservableObject {
     @Published var store: String = ""
     @Published var calander: Date = Date()
     @Published var IsOpended: Bool = false
+    @Published var IsCalenderOpened: Bool = false
 }
 
 struct PlanningButtonView: View {
@@ -39,7 +40,7 @@ struct PlanningButtonView: View {
                         y: 3)
                 .sheet(isPresented: $sheetState.IsOpended)
                 {
-                AddPlanningView()
+                    AddPlanningView(sheetState: self.sheetState)
             }
         }
     }

@@ -44,12 +44,13 @@ struct SearchBar: UIViewRepresentable {
     }
 }
 
-struct SelectStoreView: View {
+struct SelectStoreView: View {    
     var sheetState: SheetState
     
     let datas = ["五之神", "鳥人拉麵 中山店", "麵屋壹慶", "五之神製作所 台灣", "鷹流拉麵 台灣本店", "Okaeri お帰り 你回來啦拉麵", "麵屋牛一雞骨牛肉麵", "雞二拉麵", "五之神", "鳥人拉麵 中山店", "麵屋壹慶", "五之神製作所 台灣", "鷹流拉麵 台灣本店", "Okaeri お帰り 你回來啦拉麵", "麵屋牛一雞骨牛肉麵", "雞二拉麵"]
     
     @State private var searchText = ""
+    @State private var showingDetail: Bool = false;
     
     var body: some View {
         VStack {
@@ -58,9 +59,13 @@ struct SelectStoreView: View {
                 ForEach(self.datas.filter {
                     self.searchText.isEmpty ? true : $0.lowercased().contains(self.searchText.lowercased())
                 }, id: \.self) { data in
-                    NavigationLink(destination: SelectDateView(sheetState: self.sheetState)
-                        ) {
-                            Text(data)
+                    Button(action: {
+                        self.sheetState.store = data
+                        self.showingDetail.toggle()
+                    }) {
+                        Text(data)
+                    }.sheet(isPresented: self.$showingDetail) {
+                        SelectDateView(sheetState: self.sheetState)
                     }
                 }
             }

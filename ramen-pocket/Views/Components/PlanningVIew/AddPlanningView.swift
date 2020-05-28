@@ -34,7 +34,6 @@ extension View {
 
 //Steppter Control
 struct AddPlanningView: View {
-    @Environment(\.presentationMode) var presentationMode
     var sheetState: SheetState = SheetState()
     
     var body: some View {

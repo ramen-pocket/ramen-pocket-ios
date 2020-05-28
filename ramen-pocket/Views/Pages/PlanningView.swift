@@ -22,7 +22,7 @@ class PlanningState: ObservableObject {
 
 struct PlanningView: View {
     @ObservedObject var planningState = PlanningState()
-        
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -30,6 +30,7 @@ struct PlanningView: View {
                     List(planningState.plans) { (plan)  in
                         PlanningItemView(plan: plan).padding(.top, 20)
                     }
+                    .listRowInsets(EdgeInsets())
                     .padding(.leading, -17)
                     .onAppear {
                         UITableView.appearance().separatorColor = .clear
@@ -42,7 +43,6 @@ struct PlanningView: View {
                 }
             }
             .navigationBarTitle("計畫")
-            
         }
         .padding()
     }

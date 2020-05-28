@@ -13,14 +13,19 @@ struct PlanningItemView: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            Image(plan.image)
-                .resizable()
-                .clipShape(Circle())
-                .padding(.all)
-                .scaledToFill()
-                .frame(width: 76, height: 76)
-                .clipped()
-            
+            ZStack{
+                Rectangle()
+                    .frame(width: 1, alignment: .bottomLeading)
+                    .background(Color.black)
+                    .offset(y: 48)
+                Image(plan.image)
+                    .resizable()
+                    .clipShape(Circle())
+                    .padding(.all)
+                    .scaledToFill()
+                    .frame(width: 76, height: 76)
+                    .clipped()
+            }
             VStack(alignment: .leading,spacing: 10) {
                 Text(plan.name)
                     .font(.system(size: 30))
