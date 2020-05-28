@@ -19,6 +19,19 @@
 		4471E59B247ED6C00063CCE2 /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4471E59A247ED6C00063CCE2 /* CollectionsView.swift */; };
 		44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AEF06E247A4E0F004046D4 /* ProfileView.swift */; };
 		44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AEF070247A50D5004046D4 /* PlanningView.swift */; };
+		985A8BEA247F6E7E006CF7F9 /* PlanningItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BE9247F6E7E006CF7F9 /* PlanningItemView.swift */; };
+		985A8BEC247F6EBB006CF7F9 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BEB247F6EBB006CF7F9 /* Plan.swift */; };
+		985A8BEE247F6EFC006CF7F9 /* PlanningButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BED247F6EFC006CF7F9 /* PlanningButtonView.swift */; };
+		985A8BF0247F6F28006CF7F9 /* AddPlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BEF247F6F28006CF7F9 /* AddPlanningView.swift */; };
+		985A8BFB247F715B006CF7F9 /* RKColorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BF4247F715B006CF7F9 /* RKColorSettings.swift */; };
+		985A8BFC247F715B006CF7F9 /* RKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BF5247F715B006CF7F9 /* RKViewController.swift */; };
+		985A8BFD247F715B006CF7F9 /* RKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BF6247F715B006CF7F9 /* RKManager.swift */; };
+		985A8BFE247F715B006CF7F9 /* RKCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BF7247F715B006CF7F9 /* RKCell.swift */; };
+		985A8BFF247F715B006CF7F9 /* RKMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BF8247F715B006CF7F9 /* RKMonth.swift */; };
+		985A8C00247F715B006CF7F9 /* RKDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BF9247F715B006CF7F9 /* RKDate.swift */; };
+		985A8C01247F715B006CF7F9 /* RKWeekdayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BFA247F715B006CF7F9 /* RKWeekdayHeader.swift */; };
+		985A8C03247F71D5006CF7F9 /* SelectDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8C02247F71D5006CF7F9 /* SelectDateView.swift */; };
+		985A8C05247F723F006CF7F9 /* SelectRamenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8C04247F723F006CF7F9 /* SelectRamenStore.swift */; };
 		B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DD92472C9AB007D351D /* CommentItemView.swift */; };
 		B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A3246EB172003EAEC8 /* RamenListView.swift */; };
 		B17333A6246EB1DD003EAEC8 /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A5246EB1DD003EAEC8 /* Ramen.swift */; };
@@ -64,6 +77,19 @@
 		4471E59A247ED6C00063CCE2 /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
 		44AEF06E247A4E0F004046D4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		44AEF070247A50D5004046D4 /* PlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningView.swift; sourceTree = "<group>"; };
+		985A8BE9247F6E7E006CF7F9 /* PlanningItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningItemView.swift; sourceTree = "<group>"; };
+		985A8BEB247F6EBB006CF7F9 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		985A8BED247F6EFC006CF7F9 /* PlanningButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningButtonView.swift; sourceTree = "<group>"; };
+		985A8BEF247F6F28006CF7F9 /* AddPlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanningView.swift; sourceTree = "<group>"; };
+		985A8BF4247F715B006CF7F9 /* RKColorSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKColorSettings.swift; sourceTree = "<group>"; };
+		985A8BF5247F715B006CF7F9 /* RKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKViewController.swift; sourceTree = "<group>"; };
+		985A8BF6247F715B006CF7F9 /* RKManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKManager.swift; sourceTree = "<group>"; };
+		985A8BF7247F715B006CF7F9 /* RKCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKCell.swift; sourceTree = "<group>"; };
+		985A8BF8247F715B006CF7F9 /* RKMonth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKMonth.swift; sourceTree = "<group>"; };
+		985A8BF9247F715B006CF7F9 /* RKDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKDate.swift; sourceTree = "<group>"; };
+		985A8BFA247F715B006CF7F9 /* RKWeekdayHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RKWeekdayHeader.swift; sourceTree = "<group>"; };
+		985A8C02247F71D5006CF7F9 /* SelectDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateView.swift; sourceTree = "<group>"; };
+		985A8C04247F723F006CF7F9 /* SelectRamenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRamenStore.swift; sourceTree = "<group>"; };
 		B1717DD92472C9AB007D351D /* CommentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItemView.swift; sourceTree = "<group>"; };
 		B17333A3246EB172003EAEC8 /* RamenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListView.swift; sourceTree = "<group>"; };
 		B17333A5246EB1DD003EAEC8 /* Ramen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ramen.swift; sourceTree = "<group>"; };
@@ -122,6 +148,8 @@
 		4471E595247ED4A80063CCE2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				985A8BF3247F7140006CF7F9 /* RKCalender */,
+				985A8BE8247F6E5E006CF7F9 /* PlanningVIew */,
 				4471E599247ED56D0063CCE2 /* RamenDetailView */,
 				4471E598247ED5570063CCE2 /* RamenListView */,
 				4471E596247ED4B70063CCE2 /* ProfileView */,
@@ -170,6 +198,32 @@
 			path = RamenDetailView;
 			sourceTree = "<group>";
 		};
+		985A8BE8247F6E5E006CF7F9 /* PlanningVIew */ = {
+			isa = PBXGroup;
+			children = (
+				985A8BE9247F6E7E006CF7F9 /* PlanningItemView.swift */,
+				985A8BED247F6EFC006CF7F9 /* PlanningButtonView.swift */,
+				985A8BEF247F6F28006CF7F9 /* AddPlanningView.swift */,
+				985A8C04247F723F006CF7F9 /* SelectRamenStore.swift */,
+				985A8C02247F71D5006CF7F9 /* SelectDateView.swift */,
+			);
+			path = PlanningVIew;
+			sourceTree = "<group>";
+		};
+		985A8BF3247F7140006CF7F9 /* RKCalender */ = {
+			isa = PBXGroup;
+			children = (
+				985A8BF7247F715B006CF7F9 /* RKCell.swift */,
+				985A8BF4247F715B006CF7F9 /* RKColorSettings.swift */,
+				985A8BF9247F715B006CF7F9 /* RKDate.swift */,
+				985A8BF6247F715B006CF7F9 /* RKManager.swift */,
+				985A8BF8247F715B006CF7F9 /* RKMonth.swift */,
+				985A8BF5247F715B006CF7F9 /* RKViewController.swift */,
+				985A8BFA247F715B006CF7F9 /* RKWeekdayHeader.swift */,
+			);
+			path = RKCalender;
+			sourceTree = "<group>";
+		};
 		B19E6694247BA32E00DAA1EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				B17333A5246EB1DD003EAEC8 /* Ramen.swift */,
+				985A8BEB247F6EBB006CF7F9 /* Plan.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -385,22 +440,35 @@
 				446B9E1C247E67D8009F6E30 /* CardView.swift in Sources */,
 				B17333A6246EB1DD003EAEC8 /* Ramen.swift in Sources */,
 				4468EA92247ED74500026D55 /* CommentsView.swift in Sources */,
+				985A8BFB247F715B006CF7F9 /* RKColorSettings.swift in Sources */,
+				985A8BF0247F6F28006CF7F9 /* AddPlanningView.swift in Sources */,
 				44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */,
+				985A8C05247F723F006CF7F9 /* SelectRamenStore.swift in Sources */,
 				44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */,
 				B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */,
+				985A8C03247F71D5006CF7F9 /* SelectDateView.swift in Sources */,
 				446B9E18247E58A3009F6E30 /* Error.swift in Sources */,
 				B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */,
 				4471E594247EBCA40063CCE2 /* PanelItemView.swift in Sources */,
+				985A8C01247F715B006CF7F9 /* RKWeekdayHeader.swift in Sources */,
 				B1E9C65F2446F22300933874 /* AppDelegate.swift in Sources */,
+				985A8BFE247F715B006CF7F9 /* RKCell.swift in Sources */,
 				B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */,
 				4471E59B247ED6C00063CCE2 /* CollectionsView.swift in Sources */,
 				4468EA94247ED7EE00026D55 /* TagManagementView.swift in Sources */,
+				985A8BFC247F715B006CF7F9 /* RKViewController.swift in Sources */,
 				B1E9C6612446F22300933874 /* SceneDelegate.swift in Sources */,
 				B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */,
 				446B9E16247E5477009F6E30 /* ColorExtention.swift in Sources */,
+				985A8BEE247F6EFC006CF7F9 /* PlanningButtonView.swift in Sources */,
+				985A8BFF247F715B006CF7F9 /* RKMonth.swift in Sources */,
 				446B9E1A247E60BB009F6E30 /* StringExtension.swift in Sources */,
+				985A8BFD247F715B006CF7F9 /* RKManager.swift in Sources */,
 				4468EA98247EDBAC00026D55 /* ProfileDetailView.swift in Sources */,
 				B1E9C6632446F22400933874 /* AppView.swift in Sources */,
+				985A8BEC247F6EBB006CF7F9 /* Plan.swift in Sources */,
+				985A8BEA247F6E7E006CF7F9 /* PlanningItemView.swift in Sources */,
+				985A8C00247F715B006CF7F9 /* RKDate.swift in Sources */,
 				4468EA96247ED80F00026D55 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
