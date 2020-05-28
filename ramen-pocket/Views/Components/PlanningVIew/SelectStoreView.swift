@@ -46,7 +46,7 @@ struct SearchBar: UIViewRepresentable {
 
 struct SelectStoreView: View {    
     var sheetState: SheetState
-    
+
     let datas = ["五之神", "鳥人拉麵 中山店", "麵屋壹慶", "五之神製作所 台灣", "鷹流拉麵 台灣本店", "Okaeri お帰り 你回來啦拉麵", "麵屋牛一雞骨牛肉麵", "雞二拉麵", "五之神", "鳥人拉麵 中山店", "麵屋壹慶", "五之神製作所 台灣", "鷹流拉麵 台灣本店", "Okaeri お帰り 你回來啦拉麵", "麵屋牛一雞骨牛肉麵", "雞二拉麵"]
     
     @State private var searchText = ""

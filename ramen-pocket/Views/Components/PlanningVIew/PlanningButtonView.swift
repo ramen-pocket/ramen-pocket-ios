@@ -11,8 +11,8 @@ import SwiftUI
 class SheetState: ObservableObject {
     @Published var store: String = ""
     @Published var calander: Date = Date()
+    @Published var image: String = ""
     @Published var IsOpended: Bool = false
-    @Published var IsCalenderOpened: Bool = false
 }
 
 struct PlanningButtonView: View {
@@ -43,11 +43,5 @@ struct PlanningButtonView: View {
                     AddPlanningView(sheetState: self.sheetState)
             }
         }
-    }
-}
-
-struct PlanningButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlanningButtonView()
     }
 }

@@ -50,11 +50,4 @@ struct AddPlanningView: View {
             .navigationBarTitle("選擇店家")
         }
     }
-    
-    struct NewPlanningView_Previews: PreviewProvider {
-        
-        static var previews: some View {
-            AddPlanningView()
-        }
-    }
 }

@@ -15,7 +15,7 @@ class RKManager : ObservableObject {
     @Published var maximumDate: Date = Date()
     @Published var disabledDates: [Date] = [Date]()
     @Published var selectedDates: [Date] = [Date]()
-    @Published var selectedDate: Date! = nil
+    @Published var selectedDate: Date! = Date()
     @Published var startDate: Date! = nil
     @Published var endDate: Date! = nil
     

@@ -15,7 +15,7 @@ struct PlanningItemView: View {
         HStack(alignment: .top, spacing: 0) {
             ZStack{
                 Rectangle()
-                    .frame(width: 1, alignment: .bottomLeading)
+                    .frame(width: 0.5, alignment: .bottomLeading)
                     .background(Color.black)
                     .offset(y: 48)
                 Image(plan.image)
