@@ -32,48 +32,23 @@ extension View {
     }
 }
 
-enum ActiveSheet {
-    case storeSheet, calenderSheet, none
-}
-
-class SheetState: ObservableObject {
-    @Published var activeSheet: ActiveSheet = .storeSheet
-    @Published var store: String = ""
-    @Published var calander: Date = Date()
-    @Published var IsDimissed: Bool = false
-}
-
 //Steppter Control
 struct AddPlanningView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject private var sheetState: SheetState = SheetState()
+    var sheetState: SheetState = SheetState()
     
     var body: some View {
         NavigationView {
-            if(self.sheetState.activeSheet == ActiveSheet.storeSheet) {
-                SelectRamenStore(sheetState: sheetState)
-                    .resignKeyboardOnDragGesture()
-                    .navigationBarItems(trailing:
-                        HStack{
-                            Button("取消") {
-                                self.presentationMode.wrappedValue.dismiss()
-                            }
+            SelectStoreView(sheetState: sheetState)
+                .resignKeyboardOnDragGesture()
+                .navigationBarItems(trailing:
+                    HStack{
+                        Button("取消") {
+                            self.sheetState.IsOpended = false
                         }
-                )
-            }
-            else if(self.sheetState.activeSheet == ActiveSheet.calenderSheet) {
-                SelectDateView(sheetState: sheetState)
-                    .navigationBarItems(trailing:
-                        HStack {
-                            Button("上一頁") {
-                                self.sheetState.activeSheet = ActiveSheet.storeSheet
-                            }
-                            Button("新增") {
-                                self.presentationMode.wrappedValue.dismiss()
-                            }
-                    })
-                    .resignKeyboardOnDragGesture()
-            }
+                    }
+            )
+            .navigationBarTitle("選擇店家")
         }
     }
     

@@ -8,14 +8,21 @@
 
 import SwiftUI
 
+class SheetState: ObservableObject {
+    @Published var store: String = ""
+    @Published var calander: Date = Date()
+    @Published var IsOpended: Bool = false
+}
+
 struct PlanningButtonView: View {
+    @ObservedObject var sheetState: SheetState = SheetState()
     @State var showingDetail = false
     
     var body: some View {
         HStack(alignment: .firstTextBaseline, spacing: 0) {
             Spacer()
             Button(action: {
-                self.showingDetail.toggle()
+                self.sheetState.IsOpended.toggle()
             }, label: {
                 Text("+")
                     .font(.system(.largeTitle))
@@ -30,7 +37,7 @@ struct PlanningButtonView: View {
                         radius: 3,
                         x: 3,
                         y: 3)
-                .sheet(isPresented: $showingDetail)
+                .sheet(isPresented: $sheetState.IsOpended)
                 {
                 AddPlanningView()
             }

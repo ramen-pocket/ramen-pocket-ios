@@ -44,7 +44,7 @@ struct SearchBar: UIViewRepresentable {
     }
 }
 
-struct SelectRamenStoreView: View {
+struct SelectStoreView: View {
     var sheetState: SheetState
     
     let datas = ["五之神", "鳥人拉麵 中山店", "麵屋壹慶", "五之神製作所 台灣", "鷹流拉麵 台灣本店", "Okaeri お帰り 你回來啦拉麵", "麵屋牛一雞骨牛肉麵", "雞二拉麵", "五之神", "鳥人拉麵 中山店", "麵屋壹慶", "五之神製作所 台灣", "鷹流拉麵 台灣本店", "Okaeri お帰り 你回來啦拉麵", "麵屋牛一雞骨牛肉麵", "雞二拉麵"]
@@ -59,12 +59,7 @@ struct SelectRamenStoreView: View {
                     self.searchText.isEmpty ? true : $0.lowercased().contains(self.searchText.lowercased())
                 }, id: \.self) { data in
                     NavigationLink(destination: SelectDateView(sheetState: self.sheetState)
-                        .navigationBarItems(trailing:
-                            HStack {
-                                Button("上一頁") {
-                                    self.sheetState.activeSheet = ActiveSheet.storeSheet
-                                }
-                        })) {
+                        ) {
                             Text(data)
                     }
                 }
