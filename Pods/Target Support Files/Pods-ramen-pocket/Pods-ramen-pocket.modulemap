@@ -1,0 +1,6 @@
+framework module Pods_ramen_pocket {
+  umbrella header "Pods-ramen-pocket-umbrella.h"
+
+  export *
+  module * { export * }
+}
