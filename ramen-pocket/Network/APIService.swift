@@ -23,7 +23,7 @@ public struct APIService {
     }
     
     
-    public func get<T: Codable>(endpoint: Endpoint, params: [String: String]? = nil) -> AnyPublisher<T, Error> {
+    public func get<T: Decodable>(endpoint: Endpoint, params: [String: String]? = nil,  headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
         let queryURL = baseURL.appendingPathComponent(endpoint.path())
         var components = URLComponents(url: queryURL, resolvingAgainstBaseURL: true)!
         if let params = params {
@@ -33,6 +33,12 @@ public struct APIService {
         }
         var request = URLRequest(url: components.url!)
         request.httpMethod = "GET"
+        
+        if (headers != nil) {
+            for (key, value) in headers! {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
@@ -46,18 +52,27 @@ public struct APIService {
         .eraseToAnyPublisher()
     }
     
-    public func post<T: Codable>(endpoint: Endpoint, jsonObject: [String: String]) -> AnyPublisher<T, Error> {
+    public func post<T: Decodable>(endpoint: Endpoint, jsonObject: [String: String]? = nil, headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
         let queryURL = baseURL.appendingPathComponent(endpoint.path())
         let components = URLComponents(url: queryURL, resolvingAgainstBaseURL: true)!
         var request = URLRequest(url: components.url!)
-        do{
-            request.httpBody = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions())
-        } catch let error{
-            print(error)
+        if (jsonObject != nil) {
+            do{
+                request.httpBody = try JSONSerialization.data(withJSONObject: jsonObject!, options: JSONSerialization.WritingOptions())
+            } catch let error{
+                print(error)
+            }
         }
+        
         request.httpMethod = "POST"
         request.addValue("application/json",forHTTPHeaderField: "Content-Type")
         request.addValue("application/json",forHTTPHeaderField: "Accept")
+        
+        if (headers != nil) {
+            for (key, value) in headers! {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in

@@ -12,44 +12,57 @@ struct AppView: View {
     
     @State var selectedTab = 0
     
+    @EnvironmentObject var userAuth: UserAuth
+    
     init() {
-//        UITabBar.appearance().barTintColor = UIColor.white
+        //        UITabBar.appearance().barTintColor = UIColor.white
     }
     
     var body: some View {
-        VStack {
-            TabView(selection: $selectedTab) {
-                RamenListView()
-                    .tabItem {
-                        Image("explore").renderingMode(.template)
-                        Text("探索")
+        Group {
+            if !userAuth.isLogin {
+                LoginView()
+            } else {
+                VStack {
+                    TabView(selection: $selectedTab) {
+                        RamenListView()
+                            .tabItem {
+                                Image("explore").renderingMode(.template)
+                                Text("探索")
+                        }
+                        .tag(0)
+                        
+                        PlanningView()
+                            .tabItem {
+                                Image("plan").renderingMode(.template)
+                                Text("計畫")
+                        }
+                        .tag(1)
+                        
+                        ProfileView()
+                            .tabItem {
+                                Image("profile").renderingMode(.template)
+                                Text("個人")
+                        }
+                        .tag(2)
+                    }
+                    .accentColor(.red)
+                    
+                    Spacer()
                 }
-                .tag(0)
-                
-                PlanningView()
-                    .tabItem {
-                        Image("plan").renderingMode(.template)
-                        Text("計畫")
+                .onAppear {
+                    let preferences = UserDefaults.standard
+                    self.userAuth.isLogin = preferences.bool(forKey: "isLogin")
                 }
-                .tag(1)
-                
-                ProfileView()
-                    .tabItem {
-                        Image("profile").renderingMode(.template)
-                        Text("個人")
-                }
-                .tag(2)
             }
-            .accentColor(.red)
-            
-            Spacer()
         }
     }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView()
+        AppView().environmentObject(UserAuth())
     }
 }
 

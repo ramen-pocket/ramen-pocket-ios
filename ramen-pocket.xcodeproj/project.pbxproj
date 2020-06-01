@@ -20,6 +20,8 @@
 		44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AEF06E247A4E0F004046D4 /* ProfileView.swift */; };
 		44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AEF070247A50D5004046D4 /* PlanningView.swift */; };
 		7CD681E6C60597457095FE68 /* Pods_ramen_pocketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAE1A9073B502D34C948E69 /* Pods_ramen_pocketTests.framework */; };
+		B1534BAE248506F2001EAA88 /* APIService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1534BAD248506F2001EAA88 /* APIService+Profile.swift */; };
+		B1534BB22485083A001EAA88 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1534BB12485083A001EAA88 /* Profile.swift */; };
 		B1624CE1247E46B000502C49 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE0247E46B000502C49 /* APIService.swift */; };
 		B1624CE3247E5CEC00502C49 /* APIService+Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE2247E5CEC00502C49 /* APIService+Ramen.swift */; };
 		B1624CE8247FF6C400502C49 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE7247FF6C400502C49 /* Endpoint.swift */; };
@@ -29,6 +31,8 @@
 		B17333A6246EB1DD003EAEC8 /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A5246EB1DD003EAEC8 /* Ramen.swift */; };
 		B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A7246EB213003EAEC8 /* RamenListItemView.swift */; };
 		B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A9246EB243003EAEC8 /* RamenDetailView.swift */; };
+		B1B32A21248523AE002EAA47 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B32A20248523AE002EAA47 /* UserAuth.swift */; };
+		B1B32A2324852536002EAA47 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B32A2224852536002EAA47 /* LoginView.swift */; };
 		B1E9C65F2446F22300933874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C65E2446F22300933874 /* AppDelegate.swift */; };
 		B1E9C6612446F22300933874 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C6602446F22300933874 /* SceneDelegate.swift */; };
 		B1E9C6632446F22400933874 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C6622446F22400933874 /* AppView.swift */; };
@@ -75,6 +79,8 @@
 		7156BAE875DBD5CB55BEDB38 /* Pods-ramen-pocketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ramen-pocketTests.debug.xcconfig"; path = "Target Support Files/Pods-ramen-pocketTests/Pods-ramen-pocketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EF228F589E5963413148F2C /* Pods-ramen-pocketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ramen-pocketTests.release.xcconfig"; path = "Target Support Files/Pods-ramen-pocketTests/Pods-ramen-pocketTests.release.xcconfig"; sourceTree = "<group>"; };
 		995FD2FB5267DEC6444A9B55 /* Pods-ramen-pocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ramen-pocket.release.xcconfig"; path = "Target Support Files/Pods-ramen-pocket/Pods-ramen-pocket.release.xcconfig"; sourceTree = "<group>"; };
+		B1534BAD248506F2001EAA88 /* APIService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+Profile.swift"; sourceTree = "<group>"; };
+		B1534BB12485083A001EAA88 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		B1624CE0247E46B000502C49 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B1624CE2247E5CEC00502C49 /* APIService+Ramen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+Ramen.swift"; sourceTree = "<group>"; };
 		B1624CE7247FF6C400502C49 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -84,6 +90,8 @@
 		B17333A5246EB1DD003EAEC8 /* Ramen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ramen.swift; sourceTree = "<group>"; };
 		B17333A7246EB213003EAEC8 /* RamenListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListItemView.swift; sourceTree = "<group>"; };
 		B17333A9246EB243003EAEC8 /* RamenDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenDetailView.swift; sourceTree = "<group>"; };
+		B1B32A20248523AE002EAA47 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		B1B32A2224852536002EAA47 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B1E9C65B2446F22300933874 /* ramen-pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ramen-pocket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E9C65E2446F22300933874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1E9C6602446F22300933874 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +176,7 @@
 				44AEF06E247A4E0F004046D4 /* ProfileView.swift */,
 				4471E59A247ED6C00063CCE2 /* CollectionsView.swift */,
 				4468EA91247ED74500026D55 /* CommentsView.swift */,
+				B1B32A2224852536002EAA47 /* LoginView.swift */,
 				4468EA93247ED7EE00026D55 /* TagManagementView.swift */,
 				4468EA95247ED80F00026D55 /* SettingsView.swift */,
 				4468EA97247EDBAC00026D55 /* ProfileDetailView.swift */,
@@ -209,6 +218,7 @@
 			children = (
 				B1624CE0247E46B000502C49 /* APIService.swift */,
 				B1624CE2247E5CEC00502C49 /* APIService+Ramen.swift */,
+				B1534BAD248506F2001EAA88 /* APIService+Profile.swift */,
 				B1624CE7247FF6C400502C49 /* Endpoint.swift */,
 			);
 			path = Network;
@@ -235,7 +245,9 @@
 		B19E6695247BA34E00DAA1EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B1B32A20248523AE002EAA47 /* UserAuth.swift */,
 				B17333A5246EB1DD003EAEC8 /* Ramen.swift */,
+				B1534BB12485083A001EAA88 /* Profile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -591,11 +603,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1534BAE248506F2001EAA88 /* APIService+Profile.swift in Sources */,
 				446B9E1C247E67D8009F6E30 /* CardView.swift in Sources */,
 				B1624CE1247E46B000502C49 /* APIService.swift in Sources */,
 				B17333A6246EB1DD003EAEC8 /* Ramen.swift in Sources */,
 				4468EA92247ED74500026D55 /* CommentsView.swift in Sources */,
 				44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */,
+				B1B32A21248523AE002EAA47 /* UserAuth.swift in Sources */,
 				44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */,
 				B1624CEA2481018E00502C49 /* RamenListViewModel.swift in Sources */,
 				B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */,
@@ -606,9 +620,11 @@
 				B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */,
 				4471E59B247ED6C00063CCE2 /* CollectionsView.swift in Sources */,
 				4468EA94247ED7EE00026D55 /* TagManagementView.swift in Sources */,
+				B1534BB22485083A001EAA88 /* Profile.swift in Sources */,
 				B1E9C6612446F22300933874 /* SceneDelegate.swift in Sources */,
 				B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */,
 				B1624CE8247FF6C400502C49 /* Endpoint.swift in Sources */,
+				B1B32A2324852536002EAA47 /* LoginView.swift in Sources */,
 				446B9E16247E5477009F6E30 /* ColorExtention.swift in Sources */,
 				446B9E1A247E60BB009F6E30 /* StringExtension.swift in Sources */,
 				4468EA98247EDBAC00026D55 /* ProfileDetailView.swift in Sources */,
