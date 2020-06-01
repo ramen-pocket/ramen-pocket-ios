@@ -7,10 +7,22 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct LoginView: View {
+    
+    init() {
+        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button("Login", action: handleLogin)
+    }
+    
+    private func handleLogin() {
+        let test = GIDSignIn.sharedInstance()?.signIn()
+        print(test)
     }
 }
 
