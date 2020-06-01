@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum Error: Swift.Error {
+enum MyError: Error {
     case general(reason: String)
 }
