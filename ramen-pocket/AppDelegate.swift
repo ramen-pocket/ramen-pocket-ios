@@ -15,14 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     private var cancellable: AnyCancellable?
 
-    var userAuth: UserAuth?
+    var globalState: GlobalState?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        userAuth = UserAuth()
+        globalState = GlobalState()
         let preferences = UserDefaults.standard
-        userAuth!.isLogin = preferences.bool(forKey: "isLogin")
+        globalState!.isLogin = preferences.bool(forKey: "isLogin")
 
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "153913845070-47smfs4ufmjd049gf5o2ms1gh49rf99o.apps.googleusercontent.com"
@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     }
                 }, receiveValue: { profile in
                     print(profile)
-                    self.userAuth?.isLogin = true
+                    self.globalState?.isLogin = true
                 })
         }
     }

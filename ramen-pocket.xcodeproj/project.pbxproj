@@ -32,7 +32,7 @@
 		B17333A6246EB1DD003EAEC8 /* Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A5246EB1DD003EAEC8 /* Ramen.swift */; };
 		B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A7246EB213003EAEC8 /* RamenListItemView.swift */; };
 		B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A9246EB243003EAEC8 /* RamenDetailView.swift */; };
-		B1B32A21248523AE002EAA47 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B32A20248523AE002EAA47 /* UserAuth.swift */; };
+		B1B32A21248523AE002EAA47 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B32A20248523AE002EAA47 /* GlobalState.swift */; };
 		B1B32A2324852536002EAA47 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B32A2224852536002EAA47 /* LoginView.swift */; };
 		B1E9C65F2446F22300933874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C65E2446F22300933874 /* AppDelegate.swift */; };
 		B1E9C6612446F22300933874 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E9C6602446F22300933874 /* SceneDelegate.swift */; };
@@ -92,7 +92,7 @@
 		B17333A5246EB1DD003EAEC8 /* Ramen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ramen.swift; sourceTree = "<group>"; };
 		B17333A7246EB213003EAEC8 /* RamenListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListItemView.swift; sourceTree = "<group>"; };
 		B17333A9246EB243003EAEC8 /* RamenDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenDetailView.swift; sourceTree = "<group>"; };
-		B1B32A20248523AE002EAA47 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		B1B32A20248523AE002EAA47 /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		B1B32A2224852536002EAA47 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B1E9C65B2446F22300933874 /* ramen-pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ramen-pocket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1E9C65E2446F22300933874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 		B19E6695247BA34E00DAA1EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B1B32A20248523AE002EAA47 /* UserAuth.swift */,
+				B1B32A20248523AE002EAA47 /* GlobalState.swift */,
 				B17333A5246EB1DD003EAEC8 /* Ramen.swift */,
 				B1534BB12485083A001EAA88 /* Profile.swift */,
 				B1235E6F2486906C00C09672 /* ErrorResponse.swift */,
@@ -612,7 +612,7 @@
 				B17333A6246EB1DD003EAEC8 /* Ramen.swift in Sources */,
 				4468EA92247ED74500026D55 /* CommentsView.swift in Sources */,
 				44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */,
-				B1B32A21248523AE002EAA47 /* UserAuth.swift in Sources */,
+				B1B32A21248523AE002EAA47 /* GlobalState.swift in Sources */,
 				44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */,
 				B1624CEA2481018E00502C49 /* RamenListViewModel.swift in Sources */,
 				B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */,

@@ -12,7 +12,7 @@ struct AppView: View {
     
     @State var selectedTab = 0
     
-    @EnvironmentObject var userAuth: UserAuth
+    @EnvironmentObject var globalState: GlobalState
     
     init() {
         //        UITabBar.appearance().barTintColor = UIColor.white
@@ -20,7 +20,7 @@ struct AppView: View {
     
     var body: some View {
         Group {
-            if !userAuth.isLogin {
+            if !globalState.isLogin {
                 LoginView()
             } else {
                 VStack {
@@ -58,7 +58,7 @@ struct AppView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView().environmentObject(UserAuth())
+        AppView()
     }
 }
 

@@ -8,6 +8,7 @@
 
 import Foundation
 
-class UserAuth: ObservableObject {
+class GlobalState: ObservableObject {
     @Published var isLogin = false
+    @Published var isLoading = false
 }
