@@ -20,9 +20,35 @@ struct LoginView: View {
     }
     
     var body: some View {
-        VStack {
-            Button("Login", action: handleLogin)
+        VStack(alignment: .leading) {
+            Text("Hello")
+                .font(.system(size: 48))
+                .foregroundColor(Color.init(hex: "#333333"))
+                .bold()
+            Text("歡迎加入拉麵口袋，讓我們一起尋找屬於自己的拉麵吧！")
+                .frame(width: 250)
+                .padding(.bottom)
+                .foregroundColor(Color.init(hex: "#666666"))
+                
+            Button(action: handleLogin, label: {
+                HStack {
+                    Image("ic_google")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 24, height: 24)
+                    Text("Google")
+                        .font(.system(size: 20))
+                }
+            })
+                .padding()
+                .background(Color.white)
+                .cornerRadius(8.0)
+                .shadow(radius: 4.0)
+                .buttonStyle(PlainButtonStyle())
+            
         }
+        .padding(32)
+        .frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)
     }
     
     private func handleLogin() {
