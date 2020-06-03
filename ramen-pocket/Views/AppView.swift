@@ -50,10 +50,6 @@ struct AppView: View {
                     
                     Spacer()
                 }
-                .onAppear {
-                    let preferences = UserDefaults.standard
-                    self.userAuth.isLogin = preferences.bool(forKey: "isLogin")
-                }
             }
         }
     }

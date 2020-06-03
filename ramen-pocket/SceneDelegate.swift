@@ -22,10 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         let appView = AppView()
         
+        let userAuth = (UIApplication.shared.delegate as! AppDelegate).userAuth
+                
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: appView.environmentObject(UserAuth()))
+            window.rootViewController = UIHostingController(rootView: appView.environmentObject(userAuth!))
             self.window = window
             window.makeKeyAndVisible()
         }
