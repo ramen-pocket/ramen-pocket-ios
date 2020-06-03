@@ -11,17 +11,23 @@ import Combine
 
 public struct APIService {
     
-    let baseURL = URL(string: "https://api.virtualquantum.tw")!
     public static let shared = APIService()
+
+    let baseURL = URL(string: "https://api.virtualquantum.tw")!
     let decoder = JSONDecoder()
     
-    public enum APIError: Error {
-        case noResponse
-        case jsonDecodingError(error: Error)
-        case jsonEcodingError(error: Error)
-        case networkError(error: Error)
+    enum APIError: Error, LocalizedError {
+        case noResponse, apiError(reason: String), parserError(reason: String)
+        
+        var errorDescription: String? {
+            switch self {
+            case .noResponse:
+                return "No response"
+            case .apiError(let reason), .parserError(let reason):
+                return reason
+            }
+        }
     }
-    
     
     public func get<T: Decodable>(endpoint: Endpoint, params: [String: String]? = nil,  headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
         let queryURL = baseURL.appendingPathComponent(endpoint.path())
@@ -42,14 +48,42 @@ public struct APIService {
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
-                guard let _ = output.response as? HTTPURLResponse else {
+                guard let response = output.response as? HTTPURLResponse else {
                     throw APIError.noResponse
                 }
+                if !(200..<300 ~= response.statusCode) {
+                    let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: output.data)
+                    throw APIError.apiError(reason: errorResponse.reason)
+                }
                 return output.data
-        }
-        .decode(type: T.self, decoder: JSONDecoder())
-        .receive(on: DispatchQueue.main)
-        .eraseToAnyPublisher()
+            }
+            .mapError { error in
+                return APIError.apiError(reason: error.localizedDescription)
+            }
+            .decode(type: T.self, decoder: JSONDecoder())
+            .mapError { error in
+                if let error = error as? DecodingError {
+                    var errorToReport = error.localizedDescription
+                    switch error {
+                    case .dataCorrupted(let context):
+                        let details = context.underlyingError?.localizedDescription ?? context.codingPath.map { $0.stringValue }.joined(separator: ".")
+                        errorToReport = "\(context.debugDescription) - (\(details))"
+                    case .keyNotFound(let key, let context):
+                        let details = context.underlyingError?.localizedDescription ?? context.codingPath.map { $0.stringValue }.joined(separator: ".")
+                        errorToReport = "\(context.debugDescription) (key: \(key), \(details))"
+                    case .typeMismatch(let type, let context), .valueNotFound(let type, let context):
+                        let details = context.underlyingError?.localizedDescription ?? context.codingPath.map { $0.stringValue }.joined(separator: ".")
+                        errorToReport = "\(context.debugDescription) (type: \(type), \(details))"
+                    default:
+                        break
+                    }
+                    return APIError.parserError(reason: errorToReport)
+                }  else {
+                    return APIError.apiError(reason: error.localizedDescription)
+                }
+            }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
     
     public func post<T: Decodable>(endpoint: Endpoint, jsonObject: [String: String]? = nil, headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
@@ -85,6 +119,4 @@ public struct APIService {
         .receive(on: DispatchQueue.main)
         .eraseToAnyPublisher()
     }
-    
-    
 }

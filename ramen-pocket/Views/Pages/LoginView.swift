@@ -8,8 +8,11 @@
 
 import SwiftUI
 import GoogleSignIn
+import Combine
 
 struct LoginView: View {
+    
+    @State private var cancellable: AnyCancellable?
     
     init() {
         GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
@@ -17,12 +20,13 @@ struct LoginView: View {
     }
     
     var body: some View {
-        Button("Login", action: handleLogin)
+        VStack {
+            Button("Login", action: handleLogin)
+        }
     }
     
     private func handleLogin() {
-        let test = GIDSignIn.sharedInstance()?.signIn()
-        print(test)
+        GIDSignIn.sharedInstance()?.signIn()
     }
 }
 

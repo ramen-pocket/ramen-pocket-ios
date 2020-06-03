@@ -8,11 +8,13 @@
 
 import UIKit
 import GoogleSignIn
+import Combine
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
-    
+    private var cancellable: AnyCancellable?
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -58,17 +60,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
         // Perform any operations on signed in user here.
         let idToken: String = user.authentication.idToken // Safe to send to the server
-        APIService.shared.profile(idToken: idToken)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    fatalError(error.localizedDescription)
-                }
-            }, receiveValue: { profile in
-                print(profile)
-            })
+        if (!idToken.isEmpty) {
+            cancellable = APIService.shared.profile(idToken: idToken)
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        print(error.localizedDescription)
+
+                    }
+                }, receiveValue: { profile in
+                    print(profile)
+                })
+        }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
