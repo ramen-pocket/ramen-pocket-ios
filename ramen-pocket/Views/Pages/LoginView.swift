@@ -14,11 +14,6 @@ struct LoginView: View {
     
     @State private var cancellable: AnyCancellable?
     
-    init() {
-        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-    }
-    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Hello")
@@ -49,6 +44,10 @@ struct LoginView: View {
         }
         .padding(32)
         .frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)
+        .onAppear {
+            GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        }
     }
     
     private func handleLogin() {
