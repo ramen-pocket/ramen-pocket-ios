@@ -18,7 +18,7 @@ struct AppView: View {
     let loginView = LoginView()
     
     init() {
-        //        UITabBar.appearance().barTintColor = UIColor.white
+        UITabBar.appearance().barTintColor = UIColor.white
     }
     
     var body: some View {
@@ -51,8 +51,6 @@ struct AppView: View {
                             .tag(2)
                         }
                         .accentColor(.red)
-                        
-                        Spacer()
                     }
                 }
             }
