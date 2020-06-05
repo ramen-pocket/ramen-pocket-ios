@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Ramen: Codable, Identifiable {
+struct Ramen: Decodable, Identifiable {
     let id = UUID()
     let name: String
     let address: String
