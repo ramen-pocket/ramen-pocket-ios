@@ -11,9 +11,7 @@ import GoogleSignIn
 import Combine
 
 struct LoginView: View {
-    
-    @State private var cancellable: AnyCancellable?
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Hello")
