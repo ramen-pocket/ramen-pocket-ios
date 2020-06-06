@@ -10,11 +10,11 @@ import SwiftUI
 
 struct RamenListItem: View {
     
-    let ramen: Ramen
+    let store: Store
     
     var body: some View {
         HStack(alignment: .top, spacing: 24) {
-            Image(ramen.image)
+            Image(store.featuredImage)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 108, height: 108)
@@ -22,7 +22,7 @@ struct RamenListItem: View {
                 .cornerRadius(16, antialiased: true)
             
             VStack(alignment: .leading,spacing: 8) {
-                Text(ramen.name)
+                Text(store.name)
                     .font(.system(size: 22))
                     .bold()
                     .lineLimit(1)
@@ -33,13 +33,13 @@ struct RamenListItem: View {
                 }
                 HStack {
                     Image("location")
-                    Text(ramen.address).font(.system(size: 16))
+                    Text(store.location.address).font(.system(size: 16))
                 }
                 
-                HStack {
-                    Image("info")
-                    Text("\(ramen.price), \(ramen.tags.joined(separator: ", "))").font(.system(size: 16))
-                }
+//                HStack {
+//                    Image("info")
+//                    Text("\(store.price), \(ramen.tags.joined(separator: ", "))").font(.system(size: 16))
+//                }
 
             }
             Spacer()
@@ -48,9 +48,10 @@ struct RamenListItem: View {
 }
 
 struct RamenListItem_Previews: PreviewProvider {
-    static let ramen: Ramen = Ramen(name: "五之神", address: "台北市, 信義區", image: "Ramen1", openingTimes: ["11:00~15:00", "17:00~22:00"], price: "$$", tags: ["日式", "蝦味"])
+    
+    static let store: Store = Store(id: 1, name: "", isDeleted: false, isCollected: true, location: Location(address: "", lat: 0, lng: 0), rate: 5, featuredImage: "", images: [""], businessHours: [], courses: [])
     
     static var previews: some View {
-        RamenListItem(ramen: ramen)
+        RamenListItem(store: store)
     }
 }

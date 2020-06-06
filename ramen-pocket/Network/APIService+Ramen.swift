@@ -11,7 +11,7 @@ import Combine
 
 extension APIService {
     
-    func ramens() -> AnyPublisher<[Ramen], Error> {
+    func ramens() -> AnyPublisher<StoreResponse, Error> {
         return self.get(endpoint: .stores)
     }
     

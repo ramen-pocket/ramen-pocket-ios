@@ -10,7 +10,7 @@ import SwiftUI
 
 struct RamenDetailView: View {
     
-    var ramen: Ramen
+    var store: Store
     
     @State var showCopySuccesAlert: Bool = false
     
@@ -35,7 +35,7 @@ struct RamenDetailView: View {
     }
     
     func buildImage() -> some View {
-        Image("\(ramen.image)")
+        Image("\(store.featuredImage)")
             .resizable()
             .scaledToFill()
             .frame(height: 200)
@@ -45,7 +45,7 @@ struct RamenDetailView: View {
     func buildTitleSection() -> some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top) {
-                Text(ramen.name)
+                Text(store.name)
                     .font(.system(size: 36))
                     .bold()
                 
@@ -79,8 +79,12 @@ struct RamenDetailView: View {
     }
     
     func getOpeningTimeofDay(_ index: Int) -> String {
-        if (self.ramen.openingTimes.indices.contains(index)) {
-            return self.ramen.openingTimes[index]
+        if (self.store.businessHours.indices.contains(index)) {
+            if (self.store.businessHours[index].off) {
+                return "休息"
+            } else {
+                return "\(self.store.businessHours[index].begin) ~ \(self.store.businessHours[index].end)"
+            }
         } else {
             return "休息"
         }
@@ -92,11 +96,11 @@ struct RamenDetailView: View {
                 .font(.system(size: 24))
                 .bold()
                 .padding(.bottom)
-            Text(ramen.address)
+            Text(store.location.address)
             Text("複製地址")
                 .foregroundColor(.red)
                 .onTapGesture {
-                    UIPasteboard.general.string = self.ramen.address
+                    UIPasteboard.general.string = self.store.location.address
                     self.showCopySuccesAlert = true
             }
             .padding(.top)
@@ -139,9 +143,9 @@ struct RamenDetailView: View {
 
 struct RamenDetailView_Previews: PreviewProvider {
     
-    static let ramen: Ramen = Ramen(name: "五之神製麵所", address: "台北市信義區忠孝東路四段553巷6弄6號", image: "Ramen1", openingTimes: ["11:00~15:00", "17:00~22:00", "17:00~22:00", "17:00~22:00", "17:00~22:00", "17:00~22:00", "17:00~22:00"], price: "", tags: ["日式", "蝦味"])
+    static let store: Store = Store(id: 1, name: "", isDeleted: false, isCollected: true, location: Location(address: "", lat: 0, lng: 0), rate: 5, featuredImage: "", images: [""], businessHours: [], courses: [])
     
     static var previews: some View {
-        RamenDetailView(ramen: ramen)
+        RamenDetailView(store: store)
     }
 }

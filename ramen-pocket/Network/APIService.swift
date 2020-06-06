@@ -46,6 +46,11 @@ public struct APIService {
             }
         }
         
+        let preferences = UserDefaults.standard
+        let idToken = preferences.string(forKey: "idToken") ?? ""
+        request.addValue(idToken, forHTTPHeaderField: "Authorization")
+        print(idToken)
+        
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
                 guard let response = output.response as? HTTPURLResponse else {
