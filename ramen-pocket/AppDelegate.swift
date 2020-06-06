@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let preferences = UserDefaults.standard
-        appState.isLogin = preferences.bool(forKey: "isLogin")
+        appState.idToken = preferences.string(forKey: "idToken") ?? ""
 
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "153913845070-47smfs4ufmjd049gf5o2ms1gh49rf99o.apps.googleusercontent.com"
@@ -65,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Perform any operations on signed in user here.
         let idToken: String = user.authentication.idToken // Safe to send to the server
         
-        appState.isLoading = true
+        appState.showLoadingIndicator()
         
         if (!idToken.isEmpty) {
             cancellable = APIService.shared.profile(idToken: idToken)
@@ -76,10 +76,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
-                    self.appState.isLoading = false
+                    self.appState.hideLoadingIndicator()
                 }, receiveValue: { profile in
                     self.appState.profile = profile
-                    self.appState.isLogin = true
+                    self.appState.idToken = idToken
                 })
         }
     }
