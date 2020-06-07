@@ -8,9 +8,12 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
-public struct APIService {
+struct APIService {
     
+    @EnvironmentObject private var appState: AppState
+
     public static let shared = APIService()
 
     let baseURL = URL(string: "https://api.virtualquantum.tw")!
@@ -49,7 +52,8 @@ public struct APIService {
         let preferences = UserDefaults.standard
         let idToken = preferences.string(forKey: "idToken") ?? ""
         request.addValue(idToken, forHTTPHeaderField: "Authorization")
-        print(idToken)
+        
+        print("[GET] \(request.debugDescription)")
         
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
@@ -59,6 +63,9 @@ public struct APIService {
                 if !(200..<300 ~= response.statusCode) {
                     let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: output.data)
                     throw APIError.apiError(reason: errorResponse.reason)
+                }
+                if(response.statusCode == 401) {
+                    self.appState.idToken = ""
                 }
                 return output.data
             }

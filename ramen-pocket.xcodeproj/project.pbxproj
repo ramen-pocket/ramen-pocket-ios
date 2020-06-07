@@ -40,6 +40,8 @@
 		B1624CE3247E5CEC00502C49 /* APIService+Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE2247E5CEC00502C49 /* APIService+Ramen.swift */; };
 		B1624CE8247FF6C400502C49 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE7247FF6C400502C49 /* Endpoint.swift */; };
 		B1624CEA2481018E00502C49 /* RamenListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE92481018E00502C49 /* RamenListViewModel.swift */; };
+		B1626FC3248B7D8C0063C6F0 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FC2248B7D8C0063C6F0 /* RemoteImageView.swift */; };
+		B1626FC5248B7DCF0063C6F0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FC4248B7DCF0063C6F0 /* ImageLoader.swift */; };
 		B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DD92472C9AB007D351D /* CommentItemView.swift */; };
 		B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A3246EB172003EAEC8 /* RamenListView.swift */; };
 		B17333A6246EB1DD003EAEC8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A5246EB1DD003EAEC8 /* Store.swift */; };
@@ -115,6 +117,8 @@
 		B1624CE2247E5CEC00502C49 /* APIService+Ramen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+Ramen.swift"; sourceTree = "<group>"; };
 		B1624CE7247FF6C400502C49 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B1624CE92481018E00502C49 /* RamenListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListViewModel.swift; sourceTree = "<group>"; };
+		B1626FC2248B7D8C0063C6F0 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
+		B1626FC4248B7DCF0063C6F0 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B1717DD92472C9AB007D351D /* CommentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItemView.swift; sourceTree = "<group>"; };
 		B17333A3246EB172003EAEC8 /* RamenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListView.swift; sourceTree = "<group>"; };
 		B17333A5246EB1DD003EAEC8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -293,6 +297,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B1626FC6248B7DE70063C6F0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B1626FC4248B7DCF0063C6F0 /* ImageLoader.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		B19E6694247BA32E00DAA1EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +332,7 @@
 			children = (
 				B1D7FD712487EDC2000473F8 /* ActivityIndicator.swift */,
 				B17B48BE2487EF9A003F6D99 /* ActivityIndicatorView.swift */,
+				B1626FC2248B7D8C0063C6F0 /* RemoteImageView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -356,6 +369,7 @@
 				B19E6694247BA32E00DAA1EE /* Views */,
 				B1624CEB2481019300502C49 /* ViewModel */,
 				B19E6695247BA34E00DAA1EE /* Models */,
+				B1626FC6248B7DE70063C6F0 /* Helper */,
 				B1E9C6642446F22600933874 /* Assets.xcassets */,
 				B1E9C6692446F22600933874 /* LaunchScreen.storyboard */,
 				B1E9C66C2446F22600933874 /* Info.plist */,
@@ -710,10 +724,12 @@
 				985A8BFF247F715B006CF7F9 /* RKMonth.swift in Sources */,
 				446B9E1A247E60BB009F6E30 /* StringExtension.swift in Sources */,
 				985A8BFD247F715B006CF7F9 /* RKManager.swift in Sources */,
+				B1626FC5248B7DCF0063C6F0 /* ImageLoader.swift in Sources */,
 				4468EA98247EDBAC00026D55 /* ProfileDetailView.swift in Sources */,
 				B1E9C6632446F22400933874 /* AppView.swift in Sources */,
 				B1D7FD722487EDC2000473F8 /* ActivityIndicator.swift in Sources */,
 				985A8BEC247F6EBB006CF7F9 /* Plan.swift in Sources */,
+				B1626FC3248B7D8C0063C6F0 /* RemoteImageView.swift in Sources */,
 				985A8BEA247F6E7E006CF7F9 /* PlanningItemView.swift in Sources */,
 				985A8C00247F715B006CF7F9 /* RKDate.swift in Sources */,
 				4468EA96247ED80F00026D55 /* SettingsView.swift in Sources */,
