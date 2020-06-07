@@ -39,7 +39,6 @@
 		B1624CE1247E46B000502C49 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE0247E46B000502C49 /* APIService.swift */; };
 		B1624CE3247E5CEC00502C49 /* APIService+Ramen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE2247E5CEC00502C49 /* APIService+Ramen.swift */; };
 		B1624CE8247FF6C400502C49 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE7247FF6C400502C49 /* Endpoint.swift */; };
-		B1624CEA2481018E00502C49 /* RamenListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE92481018E00502C49 /* RamenListViewModel.swift */; };
 		B1626FC3248B7D8C0063C6F0 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FC2248B7D8C0063C6F0 /* RemoteImageView.swift */; };
 		B1626FC5248B7DCF0063C6F0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FC4248B7DCF0063C6F0 /* ImageLoader.swift */; };
 		B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DD92472C9AB007D351D /* CommentItemView.swift */; };
@@ -116,7 +115,6 @@
 		B1624CE0247E46B000502C49 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B1624CE2247E5CEC00502C49 /* APIService+Ramen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+Ramen.swift"; sourceTree = "<group>"; };
 		B1624CE7247FF6C400502C49 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		B1624CE92481018E00502C49 /* RamenListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListViewModel.swift; sourceTree = "<group>"; };
 		B1626FC2248B7D8C0063C6F0 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		B1626FC4248B7DCF0063C6F0 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B1717DD92472C9AB007D351D /* CommentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItemView.swift; sourceTree = "<group>"; };
@@ -289,14 +287,6 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		B1624CEB2481019300502C49 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				B1624CE92481018E00502C49 /* RamenListViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		B1626FC6248B7DE70063C6F0 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,7 +357,6 @@
 				B1E9C6602446F22300933874 /* SceneDelegate.swift */,
 				B1624CE4247E8A1700502C49 /* Network */,
 				B19E6694247BA32E00DAA1EE /* Views */,
-				B1624CEB2481019300502C49 /* ViewModel */,
 				B19E6695247BA34E00DAA1EE /* Models */,
 				B1626FC6248B7DE70063C6F0 /* Helper */,
 				B1E9C6642446F22600933874 /* Assets.xcassets */,
@@ -699,7 +688,6 @@
 				44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */,
 				B1B32A21248523AE002EAA47 /* AppState.swift in Sources */,
 				44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */,
-				B1624CEA2481018E00502C49 /* RamenListViewModel.swift in Sources */,
 				B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */,
 				985A8C03247F71D5006CF7F9 /* SelectDateView.swift in Sources */,
 				B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */,
