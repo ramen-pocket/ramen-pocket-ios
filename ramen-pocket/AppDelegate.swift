@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let preferences = UserDefaults.standard
-        appState.isLogin = preferences.bool(forKey: "isLogin")
+        appState.idToken = preferences.string(forKey: "idToken") ?? ""
 
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "153913845070-47smfs4ufmjd049gf5o2ms1gh49rf99o.apps.googleusercontent.com"
@@ -60,28 +60,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             } else {
                 print("\(error.localizedDescription)")
             }
+            appState.hideLoadingIndicator()
             return
         }
         // Perform any operations on signed in user here.
         let idToken: String = user.authentication.idToken // Safe to send to the server
+        let preferences = UserDefaults.standard
+        preferences.set(idToken, forKey: "idToken")
         
-        appState.isLoading = true
+        appState.hideLoadingIndicator()
         
-        if (!idToken.isEmpty) {
-            cancellable = APIService.shared.profile(idToken: idToken)
-                .sink(receiveCompletion: { completion in
-                    switch completion {
-                    case .finished:
-                        break
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                    self.appState.isLoading = false
-                }, receiveValue: { profile in
-                    self.appState.profile = profile
-                    self.appState.isLogin = true
-                })
-        }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,

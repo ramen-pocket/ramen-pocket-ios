@@ -7,26 +7,44 @@
 //
 
 import SwiftUI
+import Combine
 
 struct RamenListView: View {
-    let ramens: [Ramen] = [
-        Ramen(name: "鳥人拉麵 中山店", address: "台北市, 信義區", image: "Ramen1", openingTimes: ["11:00~15:00", "17:00~22:00"], price: "$$", tags: ["日式", "蝦味"]),
-        Ramen(name: "麵屋壹慶", address: "台北市, 信義區", image: "Ramen2", openingTimes: ["11:00~15:00", "17:00~22:00"], price: "$$", tags: ["日式", "蝦味"]),
-        Ramen(name: "五之神製作所 台灣", address: "台北市, 信義區", image: "Ramen3", openingTimes: ["11:00~15:00", "17:00~22:00"], price: "$$", tags: ["日式", "蝦味"]),
-        Ramen(name: "鷹流拉麵 台灣本店", address: "台北市, 信義區", image: "Ramen4", openingTimes: ["11:00~15:00", "17:00~22:00"], price: "$$", tags: ["日式", "蝦味"]),
-        Ramen(name: "Okaeri お帰り 你回來啦拉麵", address: "台北市, 信義區", image: "Ramen5", openingTimes: ["11:00~15:00", "17:00~22:00"], price: "$$", tags: ["日式", "蝦味"]),
-        Ramen(name: "麵屋牛一雞骨牛肉麵", address: "台北市, 信義區", image: "Ramen6", openingTimes: ["11:00~15:00", "17:00~22:00"], price: "$$", tags: ["日式", "蝦味"]),
-        Ramen(name: "雞二拉麵", address: "台北市, 信義區", image: "Ramen7", openingTimes: ["11:00~15:00", "17:00~22:00"], price: "$$", tags: ["日式", "蝦味"])
-    ]
+    
+    @EnvironmentObject private var appState: AppState
+    
+    @State private var cancellable: AnyCancellable?
+    @State private var stores: [Store] = []
+    
+    init() {
+        UITableView.appearance().tableFooterView = UIView()
+        UITableView.appearance().separatorStyle = .none
+    }
     
     var body: some View {
         NavigationView {
-            List(ramens) { ramen in
-                NavigationLink(destination: RamenDetailView(ramen: ramen)) {
-                    RamenListItem(ramen: ramen).padding(12)
+            List(stores) { store in
+                NavigationLink(destination: RamenDetailView(store: store)) {
+                    RamenListItem(store: store).padding(12)
                 }
             }
             .navigationBarTitle("拉麵清單")
+        }
+        .onAppear {
+            self.appState.showLoadingIndicator()
+            self.cancellable = APIService.shared
+                .get(endpoint: .stores)
+                .sink(receiveCompletion: { (completion) in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                    self.appState.hideLoadingIndicator()
+                }) { (storeResponse: StoreResponse) in
+                    self.stores = storeResponse.stores
+                }
         }
     }
 }

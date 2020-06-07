@@ -12,6 +12,6 @@ import Combine
 extension APIService {
     
     func profile(idToken: String) -> AnyPublisher<Profile, Error> {
-        return self.get(endpoint: .userProfile(), headers: ["Authorization": idToken])
+        return self.get(endpoint: .userProfile())
     }
 }

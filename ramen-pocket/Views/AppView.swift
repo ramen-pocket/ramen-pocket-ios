@@ -24,7 +24,7 @@ struct AppView: View {
     var body: some View {
         ActivityIndicatorView() {
             Group {
-                if !self.appState.isLogin {
+                if self.appState.idToken.isEmpty {
                     self.loginView
                 } else {
                     VStack {

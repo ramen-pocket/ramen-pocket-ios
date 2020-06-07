@@ -23,11 +23,20 @@ class AppState: ObservableObject {
         }
     }
     
-    var isLogin: Bool = false {
+    var idToken: String = "" {
         didSet {
             let preferences = UserDefaults.standard
-            preferences.set(isLogin, forKey: "isLogin")
+            preferences.set(idToken, forKey: "idToken")
             objectWillChange.send(self)
         }
     }
+    
+    func showLoadingIndicator() {
+        isLoading = true
+    }
+    
+    func hideLoadingIndicator() {
+        isLoading = false
+    }
+    
 }
