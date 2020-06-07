@@ -49,6 +49,10 @@ struct APIService {
             }
         }
         
+        // Set dateDecodingStrategy to iso8601 for decoding date format in JSON
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
         let preferences = UserDefaults.standard
         let idToken = preferences.string(forKey: "idToken") ?? ""
         request.addValue(idToken, forHTTPHeaderField: "Authorization")
@@ -61,7 +65,7 @@ struct APIService {
                     throw APIError.noResponse
                 }
                 if !(200..<300 ~= response.statusCode) {
-                    let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: output.data)
+                    let errorResponse = try decoder.decode(ErrorResponse.self, from: output.data)
                     throw APIError.apiError(reason: errorResponse.reason)
                 }
                 if(response.statusCode == 401) {
@@ -72,7 +76,7 @@ struct APIService {
             .mapError { error in
                 return APIError.apiError(reason: error.localizedDescription)
             }
-            .decode(type: T.self, decoder: JSONDecoder())
+            .decode(type: T.self, decoder: decoder)
             .mapError { error in
                 if let error = error as? DecodingError {
                     var errorToReport = error.localizedDescription
