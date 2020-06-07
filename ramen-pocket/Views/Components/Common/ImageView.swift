@@ -8,30 +8,24 @@
 
 import SwiftUI
 
-struct ImageView: View {
+struct RemoteImageView: View {
     
     @ObservedObject var imageLoader: ImageLoader
     @State var image: UIImage = UIImage()
+    var width: CGFloat = 84
+    var height: CGFloat = 84
     
-    private var width: CGFloat;
-    private var height: CGFloat;
-    private var cornerRadius: CGFloat
-    
-    init(withurl url: String, width: CGFloat = .infinity, height: CGFloat = .infinity, cornerRadius: CGFloat = 0) {
+    init(withurl url: String) {
         imageLoader = ImageLoader(imageURL: url)
-        self.width = width;
-        self.height = height;
-        self.cornerRadius = cornerRadius
     }
     
     var body: some View {
         VStack {
             Image(uiImage: image)
                 .resizable()
-                .scaledToFill()
-                .frame(maxWidth: width, maxHeight: height)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: width, height: width)
                 .clipped()
-                .cornerRadius(cornerRadius, antialiased: true)
         }.onReceive(imageLoader.didChange) { data in
             self.image = UIImage(data: data) ?? UIImage()
         }
@@ -41,6 +35,6 @@ struct ImageView: View {
 
 struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView(withurl: "https://megapx-assets.dcard.tw/images/cb42c64a-e64c-483e-9753-d5003277f176/160.jpeg")
+        RemoteImageView(withurl: "https://megapx-assets.dcard.tw/images/cb42c64a-e64c-483e-9753-d5003277f176/160.jpeg")
     }
 }

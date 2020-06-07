@@ -35,11 +35,7 @@ struct RamenDetailView: View {
     }
     
     func buildImage() -> some View {
-        Image("\(store.featuredImage)")
-            .resizable()
-            .scaledToFill()
-            .frame(height: 200)
-            .clipped()
+        ImageView(withurl: "\(store.featuredImage)", height: 200)
     }
     
     func buildTitleSection() -> some View {

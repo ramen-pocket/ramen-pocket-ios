@@ -14,12 +14,7 @@ struct RamenListItem: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 24) {
-            Image(store.featuredImage)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 108, height: 108)
-                .clipped()
-                .cornerRadius(16, antialiased: true)
+            ImageView(withurl: store.featuredImage, width: 108, height: 108, cornerRadius: 16)
             
             VStack(alignment: .leading,spacing: 8) {
                 Text(store.name)
@@ -33,7 +28,9 @@ struct RamenListItem: View {
                 }
                 HStack {
                     Image("location")
-                    Text(store.location.address).font(.system(size: 16))
+                    Text(store.location.address)
+                        .font(.system(size: 16))
+                        .lineLimit(1)
                 }
                 
 //                HStack {
