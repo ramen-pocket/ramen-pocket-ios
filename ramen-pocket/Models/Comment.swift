@@ -7,3 +7,32 @@
 //
 
 import Foundation
+
+// MARK: - CommentResponse
+struct CommentResponse: Decodable {
+    let comments: [Comment]
+}
+
+// MARK: - Comment
+struct Comment: Decodable, Identifiable {
+    let id = UUID()
+    let user: User
+    let records: [Record]
+}
+
+// MARK: - Record
+struct Record: Decodable {
+    let id: Int
+    let isDeleted: Bool
+    let content: String
+    let courses: [String]
+    let rate: Double
+    let publishedAt: Date
+}
+
+// MARK: - User
+struct User: Decodable {
+    let name: String
+    let avatar: String
+    let points: Int
+}

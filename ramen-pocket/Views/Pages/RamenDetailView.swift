@@ -7,12 +7,17 @@
 //
 
 import SwiftUI
+import Combine
 
 struct RamenDetailView: View {
     
     var store: Store
     
+    @EnvironmentObject var appState: AppState
+    
     @State var showCopySuccesAlert: Bool = false
+    @State var comments: [Comment] = []
+    @State private var cancellable: AnyCancellable?
     
     var body: some View {
         ScrollView {
@@ -31,7 +36,9 @@ struct RamenDetailView: View {
             }
         }
         .navigationBarTitle("", displayMode: .inline)
-        
+        .onAppear {
+            self.fetchStoreComment()
+        }
     }
     
     func buildImage() -> some View {
@@ -114,11 +121,15 @@ struct RamenDetailView: View {
                 Text("留言評論")
                     .font(.system(size: 24))
                     .bold()
+                Text("(\(comments.count) 則)")
                 Spacer()
-                Text("查看所有評論")
-                    .foregroundColor(.red)
+                NavigationLink(destination: RamenCommentsView(comments: comments)) {
+                    Text("查看所有評論")
+                        .foregroundColor(.red)
+                }
+                
             }
-            CommentItem(author: "DevilTea", message: "蝦味很濃，值得一試")
+            //            CommentItem(author: "DevilTea", message: "蝦味很濃，值得一試")
             
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
@@ -141,6 +152,17 @@ struct RamenDetailView: View {
         .frame(maxWidth: .infinity, alignment: .topLeading)
         .padding()
         .background(Color.white)
+    }
+    
+    func fetchStoreComment() {
+        self.appState.showLoadingIndicator()
+        self.cancellable = APIService.shared.storeComments(self.store.id)
+            .sink(receiveCompletion: { (completion) in
+                APIService.shared.handleReceiveCompletion(completion)
+                self.appState.hideLoadingIndicator()
+            }) { (commentResponse) in
+                self.comments = commentResponse.comments
+        }
     }
 }
 
