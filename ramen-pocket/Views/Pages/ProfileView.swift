@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject private var appState: AppState
     
     var body: some View {
         NavigationView {
@@ -50,7 +51,16 @@ struct ProfileView: View {
                         PanelItemView(label: "我的收藏", icon: Image("collections"), iconColor: Color(hex: "#3CBCF7"), destination: CollectionsView())
                         PanelItemView(label: "歷史評論", icon: Image("comments"), iconColor: Color(hex: "#FAC61D"), destination: CommentsView())
                         PanelItemView(label: "喜好管理", icon: Image("heart"), iconColor: Color(hex: "#CB4042"), destination: TagManagementView())
-                        PanelItemView(label: "設定", icon: Image("settings"), iconColor: Color(hex: "#404040"), destination: SettingsView())
+                        PanelItemView(label: "設定", icon: Image("settings"), iconColor: Color(hex: "#3BB975"), destination: SettingsView())
+                        PanelItemView(label: "登出",
+                                      icon: Image("log-out"),
+                                      iconColor: Color(hex: "#404040"),
+                                      destination: EmptyView()
+                                        .onAppear() {
+                                            self.appState.idToken = ""
+                            }
+                        )
+                        
                         Spacer()
                     }
                 }
