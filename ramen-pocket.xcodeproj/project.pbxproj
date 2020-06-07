@@ -41,6 +41,7 @@
 		B1624CE8247FF6C400502C49 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1624CE7247FF6C400502C49 /* Endpoint.swift */; };
 		B1626FC3248B7D8C0063C6F0 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FC2248B7D8C0063C6F0 /* RemoteImageView.swift */; };
 		B1626FC5248B7DCF0063C6F0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FC4248B7DCF0063C6F0 /* ImageLoader.swift */; };
+		B1626FC8248D2A4F0063C6F0 /* RamenImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FC7248D2A4F0063C6F0 /* RamenImagesView.swift */; };
 		B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DD92472C9AB007D351D /* CommentItemView.swift */; };
 		B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A3246EB172003EAEC8 /* RamenListView.swift */; };
 		B17333A6246EB1DD003EAEC8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A5246EB1DD003EAEC8 /* Store.swift */; };
@@ -117,6 +118,7 @@
 		B1624CE7247FF6C400502C49 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B1626FC2248B7D8C0063C6F0 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		B1626FC4248B7DCF0063C6F0 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		B1626FC7248D2A4F0063C6F0 /* RamenImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenImagesView.swift; sourceTree = "<group>"; };
 		B1717DD92472C9AB007D351D /* CommentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItemView.swift; sourceTree = "<group>"; };
 		B17333A3246EB172003EAEC8 /* RamenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListView.swift; sourceTree = "<group>"; };
 		B17333A5246EB1DD003EAEC8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				B17333A3246EB172003EAEC8 /* RamenListView.swift */,
 				B17333A9246EB243003EAEC8 /* RamenDetailView.swift */,
+				B1626FC7248D2A4F0063C6F0 /* RamenImagesView.swift */,
 				44AEF070247A50D5004046D4 /* PlanningView.swift */,
 				44AEF06E247A4E0F004046D4 /* ProfileView.swift */,
 				4471E59A247ED6C00063CCE2 /* CollectionsView.swift */,
@@ -680,6 +683,7 @@
 			files = (
 				B1534BAE248506F2001EAA88 /* APIService+Profile.swift in Sources */,
 				446B9E1C247E67D8009F6E30 /* CardView.swift in Sources */,
+				B1626FC8248D2A4F0063C6F0 /* RamenImagesView.swift in Sources */,
 				B1624CE1247E46B000502C49 /* APIService.swift in Sources */,
 				B17333A6246EB1DD003EAEC8 /* Store.swift in Sources */,
 				4468EA92247ED74500026D55 /* CommentsView.swift in Sources */,

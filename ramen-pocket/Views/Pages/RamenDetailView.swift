@@ -127,9 +127,16 @@ struct RamenDetailView: View {
     
     func buildPhotoSection() -> some View {
         VStack(alignment: .leading) {
-            Text("拉麵照片")
-                .font(.system(size: 24))
-                .bold()
+            HStack {
+                Text("拉麵照片")
+                    .font(.system(size: 24))
+                    .bold()
+                Spacer()
+                NavigationLink(destination: RamenImagesView(images: store.images)) {
+                    Text("查看所有照片")
+                        .foregroundColor(.red)
+                }
+            }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
         .padding()
