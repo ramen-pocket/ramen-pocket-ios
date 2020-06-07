@@ -16,6 +16,11 @@ struct RamenListView: View {
     @State private var cancellable: AnyCancellable?
     @State private var stores: [Store] = []
     
+    init() {
+        UITableView.appearance().tableFooterView = UIView()
+        UITableView.appearance().separatorStyle = .none
+    }
+    
     var body: some View {
         NavigationView {
             List(stores) { store in
