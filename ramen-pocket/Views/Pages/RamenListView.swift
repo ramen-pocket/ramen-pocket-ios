@@ -35,12 +35,7 @@ struct RamenListView: View {
             self.cancellable = APIService.shared
                 .get(endpoint: .stores)
                 .sink(receiveCompletion: { (completion) in
-                    switch completion {
-                    case .finished:
-                        break
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
+                    APIService.shared.handleReceiveCompletion(completion)
                     self.appState.hideLoadingIndicator()
                 }) { (storeResponse: StoreResponse) in
                     self.stores = storeResponse.stores
