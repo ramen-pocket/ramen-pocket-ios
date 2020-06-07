@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Initialize sign-in
         GIDSignIn.sharedInstance().clientID = "153913845070-47smfs4ufmjd049gf5o2ms1gh49rf99o.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         return true
     }
     
@@ -62,30 +60,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             } else {
                 print("\(error.localizedDescription)")
             }
+            appState.hideLoadingIndicator()
             return
         }
         // Perform any operations on signed in user here.
         let idToken: String = user.authentication.idToken // Safe to send to the server
         let preferences = UserDefaults.standard
-        
         preferences.set(idToken, forKey: "idToken")
-        appState.showLoadingIndicator()
         
-        if (!idToken.isEmpty) {
-            cancellable = APIService.shared.profile(idToken: idToken)
-                .sink(receiveCompletion: { completion in
-                    switch completion {
-                    case .finished:
-                        break
-                    case .failure(let error):
-                        print(error.localizedDescription)
-                    }
-                    self.appState.hideLoadingIndicator()
-                }, receiveValue: { profile in
-                    self.appState.profile = profile
-                    self.appState.idToken = idToken
-                })
-        }
+        appState.hideLoadingIndicator()
+        
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
