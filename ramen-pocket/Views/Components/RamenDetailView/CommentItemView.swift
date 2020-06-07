@@ -10,32 +10,41 @@ import SwiftUI
 
 struct CommentItem: View {
     
-    let author: String
-    let message: String
+    let comment: Comment
     
     var body: some View {
         HStack {
-            Image("Ramen1")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 80, height: 80)
-                .clipShape(Circle())
             VStack(alignment: .leading) {
-                Text(author)
-                    .font(.system(size: 22))
-                    .padding(.bottom, 8)
-                Text(message)
-                    .foregroundColor(.secondary)
+                HStack {
+                    ImageView(withurl: comment.user.avatar, width: 32, height: 32, cornerRadius: 16)
+                    Text(comment.user.name)
+                }
+                HStack {
+                    RatingView(rating: .constant(Int(comment.records[0].rate)))
+                    Text(convertDate(date: comment.records[0].publishedAt))
+                        .lineLimit(1)
+                        .foregroundColor(Color.init(hex: "#333333"))
+                }
+                Text(comment.records[0].content)
+                    .foregroundColor(Color.init(hex: "#333333"))
+                
             }
-            .padding(.horizontal)
+            .padding()
             Spacer()
             
         }
+    }
+    
+    func convertDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY/MM/dd"
+        return dateFormatter.string(from: date)
+        
     }
 }
 
 struct CommentItem_Previews: PreviewProvider {
     static var previews: some View {
-        CommentItem(author: "DevilTea", message: "蝦味很濃，真心推")
+        CommentItem(comment: Comment(user: User(name: "Andy", avatar: "https://lh3.googleusercontent.com/a-/AOh14GgyqaWVV0q9efcQOGlEHTnaW49DCjKRpCQZADOX-N8=s96-c", points: 4), records: [Record(id: 1, isDeleted: false, content: "Test", courses: [], rate: 4.6, publishedAt: Date())]))
     }
 }

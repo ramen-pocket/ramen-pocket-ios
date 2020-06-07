@@ -51,14 +51,17 @@ struct APIService {
         
         // Set dateDecodingStrategy to iso8601 for decoding date format in JSON
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
         
         let preferences = UserDefaults.standard
         let idToken = preferences.string(forKey: "idToken") ?? ""
         request.addValue(idToken, forHTTPHeaderField: "Authorization")
         
         print("[GET] \(request.debugDescription)")
-        
+        print(request)
+
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
                 guard let response = output.response as? HTTPURLResponse else {
@@ -124,6 +127,8 @@ struct APIService {
             }
         }
         
+        print(request)
+        
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
                 guard let _ = output.response as? HTTPURLResponse else {
@@ -134,5 +139,14 @@ struct APIService {
         .decode(type: T.self, decoder: JSONDecoder())
         .receive(on: DispatchQueue.main)
         .eraseToAnyPublisher()
+    }
+    
+    func handleReceiveCompletion(_ completion: Subscribers.Completion<Error>) {
+        switch completion {
+        case .finished:
+            break
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
     }
 }

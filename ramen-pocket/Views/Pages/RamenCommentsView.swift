@@ -9,13 +9,24 @@
 import SwiftUI
 
 struct RamenCommentsView: View {
+    
+    var comments: [Comment] = []
+    
+    init(comments: [Comment]) {
+        UITableView.appearance().separatorStyle = .singleLine
+        self.comments = comments
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(comments) { comment in
+            CommentItem(comment: comment)
+        }
+        .navigationBarTitle("留言評論")
     }
 }
 
 struct RamenCommentsView_Previews: PreviewProvider {
     static var previews: some View {
-        RamenCommentsView()
+        RamenCommentsView(comments: [])
     }
 }
