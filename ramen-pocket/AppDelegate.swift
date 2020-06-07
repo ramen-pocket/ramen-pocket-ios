@@ -65,8 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
         // Perform any operations on signed in user here.
         let idToken: String = user.authentication.idToken // Safe to send to the server
-        let preferences = UserDefaults.standard
-        preferences.set(idToken, forKey: "idToken")
+        appState.idToken = idToken
         
         appState.hideLoadingIndicator()
         
