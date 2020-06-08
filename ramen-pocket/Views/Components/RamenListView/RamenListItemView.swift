@@ -23,8 +23,19 @@ struct RamenListItem: View {
                     .lineLimit(1)
                 
                 HStack {
-                   Image("dot")
-                   Text("營業中").font(.system(size: 16))
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .frame(width: 12, height: 12)
+                        .foregroundColor(.orange)
+                    Text(String(format:"%.1lf", store.rate))
+                        .foregroundColor(.orange)
+                        .font(.system(size: 16))
+                }
+                
+                
+                HStack {
+                    Image("dot")
+                    Text("營業中").font(.system(size: 16))
                 }
                 HStack {
                     Image("location")
@@ -46,7 +57,7 @@ struct RamenListItem: View {
 
 struct RamenListItem_Previews: PreviewProvider {
     
-    static let store: Store = Store(id: 1, name: "", isDeleted: false, isCollected: true, location: Location(address: "", lat: 0, lng: 0), rate: 5, featuredImage: "", images: [""], businessHours: [], courses: [])
+    static let store: Store = Store(id: 1, name: "Test", isDeleted: false, isCollected: true, location: Location(address: "", lat: 0, lng: 0), rate: 5, featuredImage: "", images: [""], businessHours: [], courses: [])
     
     static var previews: some View {
         RamenListItem(store: store)
