@@ -11,6 +11,11 @@ import SwiftUI
 struct RamenImagesView: View {
     var images: [String]
     
+    init(images: [String]) {
+        UITableView.appearance().separatorStyle = .none
+        self.images = images
+    }
+    
     var body: some View {
         List(images, id: \.self) { image in
             ImageView(withurl: image, width: .infinity, height: 200)
