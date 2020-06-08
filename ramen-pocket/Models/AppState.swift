@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import GoogleSignIn
 
 class AppState: ObservableObject {
     
@@ -27,6 +28,9 @@ class AppState: ObservableObject {
         didSet {
             let preferences = UserDefaults.standard
             preferences.set(idToken, forKey: "idToken")
+            if (idToken.isEmpty) {
+                GIDSignIn.sharedInstance().signOut()
+            }
             objectWillChange.send(self)
         }
     }
