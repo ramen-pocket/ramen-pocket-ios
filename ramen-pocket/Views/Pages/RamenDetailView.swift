@@ -12,6 +12,7 @@ import Combine
 struct RamenDetailView: View {
     
     var store: Store
+    let dayOfWeek = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
     
     @EnvironmentObject var appState: AppState
     
@@ -53,7 +54,7 @@ struct RamenDetailView: View {
                     .bold()
                 
                 Spacer()
-                Text("4.5")
+                Text(String(format:"%.1lf", store.rate))
                     .padding(10)
                     .foregroundColor(.white)
                     .background(Color.yellow)
@@ -72,7 +73,7 @@ struct RamenDetailView: View {
                 .padding(.bottom)
             Group {
                 ForEach(0...6, id: \.self) { index in
-                    Text("星期一：\(self.getOpeningTimeofDay(index))")
+                    Text("\(self.dayOfWeek[index])：\(self.getOpeningTimeofDay(index))")
                         .padding(.bottom, 8)
                 }
             }
@@ -142,6 +143,7 @@ struct RamenDetailView: View {
                 Text("拉麵照片")
                     .font(.system(size: 24))
                     .bold()
+                Text("(\(store.images.count) 張)")
                 Spacer()
                 NavigationLink(destination: RamenImagesView(images: store.images)) {
                     Text("查看所有照片")
