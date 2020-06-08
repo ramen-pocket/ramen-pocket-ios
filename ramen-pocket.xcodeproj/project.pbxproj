@@ -46,6 +46,10 @@
 		B1626FD1248D61C80063C6F0 /* APIService+Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FD0248D61C80063C6F0 /* APIService+Comment.swift */; };
 		B1626FD3248D89870063C6F0 /* RamenCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FD2248D89870063C6F0 /* RamenCommentsView.swift */; };
 		B1626FD5248D92C50063C6F0 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FD4248D92C50063C6F0 /* RatingView.swift */; };
+		B1626FD7248E46500063C6F0 /* LoggerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FD6248E46500063C6F0 /* LoggerStrategy.swift */; };
+		B1626FDA248E48990063C6F0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FD9248E48990063C6F0 /* Logger.swift */; };
+		B1626FDC248E57C00063C6F0 /* DebugStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FDB248E57C00063C6F0 /* DebugStrategy.swift */; };
+		B1626FDE248E57E40063C6F0 /* NormalStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FDD248E57E40063C6F0 /* NormalStrategy.swift */; };
 		B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DD92472C9AB007D351D /* CommentItemView.swift */; };
 		B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A3246EB172003EAEC8 /* RamenListView.swift */; };
 		B17333A6246EB1DD003EAEC8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A5246EB1DD003EAEC8 /* Store.swift */; };
@@ -127,6 +131,10 @@
 		B1626FD0248D61C80063C6F0 /* APIService+Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+Comment.swift"; sourceTree = "<group>"; };
 		B1626FD2248D89870063C6F0 /* RamenCommentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RamenCommentsView.swift; sourceTree = "<group>"; };
 		B1626FD4248D92C50063C6F0 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		B1626FD6248E46500063C6F0 /* LoggerStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerStrategy.swift; sourceTree = "<group>"; };
+		B1626FD9248E48990063C6F0 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		B1626FDB248E57C00063C6F0 /* DebugStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugStrategy.swift; sourceTree = "<group>"; };
+		B1626FDD248E57E40063C6F0 /* NormalStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalStrategy.swift; sourceTree = "<group>"; };
 		B1717DD92472C9AB007D351D /* CommentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItemView.swift; sourceTree = "<group>"; };
 		B17333A3246EB172003EAEC8 /* RamenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListView.swift; sourceTree = "<group>"; };
 		B17333A5246EB1DD003EAEC8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -304,8 +312,20 @@
 			isa = PBXGroup;
 			children = (
 				B1626FC4248B7DCF0063C6F0 /* ImageLoader.swift */,
+				B1626FD8248E465F0063C6F0 /* Logger */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B1626FD8248E465F0063C6F0 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				B1626FD6248E46500063C6F0 /* LoggerStrategy.swift */,
+				B1626FD9248E48990063C6F0 /* Logger.swift */,
+				B1626FDD248E57E40063C6F0 /* NormalStrategy.swift */,
+				B1626FDB248E57C00063C6F0 /* DebugStrategy.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 		B19E6694247BA32E00DAA1EE /* Views */ = {
@@ -703,6 +723,7 @@
 				985A8BFB247F715B006CF7F9 /* RKColorSettings.swift in Sources */,
 				985A8BF0247F6F28006CF7F9 /* AddPlanningView.swift in Sources */,
 				44AEF071247A50D5004046D4 /* PlanningView.swift in Sources */,
+				B1626FD7248E46500063C6F0 /* LoggerStrategy.swift in Sources */,
 				B1B32A21248523AE002EAA47 /* AppState.swift in Sources */,
 				44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */,
 				B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */,
@@ -710,13 +731,16 @@
 				985A8C03247F71D5006CF7F9 /* SelectDateView.swift in Sources */,
 				B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */,
 				4471E594247EBCA40063CCE2 /* PanelItemView.swift in Sources */,
+				B1626FDC248E57C00063C6F0 /* DebugStrategy.swift in Sources */,
 				985A8C01247F715B006CF7F9 /* RKWeekdayHeader.swift in Sources */,
 				B1E9C65F2446F22300933874 /* AppDelegate.swift in Sources */,
 				B1624CE3247E5CEC00502C49 /* APIService+Ramen.swift in Sources */,
 				B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */,
 				4471E59B247ED6C00063CCE2 /* CollectionsView.swift in Sources */,
+				B1626FDE248E57E40063C6F0 /* NormalStrategy.swift in Sources */,
 				4468EA94247ED7EE00026D55 /* TagManagementView.swift in Sources */,
 				B1534BB22485083A001EAA88 /* Profile.swift in Sources */,
+				B1626FDA248E48990063C6F0 /* Logger.swift in Sources */,
 				985A8BFE247F715B006CF7F9 /* RKCell.swift in Sources */,
 				B1626FD1248D61C80063C6F0 /* APIService+Comment.swift in Sources */,
 				985A8BFC247F715B006CF7F9 /* RKViewController.swift in Sources */,
