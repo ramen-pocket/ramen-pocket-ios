@@ -1,5 +1,5 @@
 //
-//  RamenListView.swift
+//  ExploreView.swift
 //  ramen-pocket
 //
 //  Created by 姚韋辰 on 2020/5/15.
@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-struct RamenListView: View {
+struct ExploreView: View {
     
     @EnvironmentObject private var appState: AppState
     
@@ -47,6 +47,6 @@ struct RamenListView: View {
 struct RamenListView_Previews: PreviewProvider {
 
     static var previews: some View {
-        RamenListView()
+        ExploreView()
     }
 }

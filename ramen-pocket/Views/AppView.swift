@@ -29,7 +29,7 @@ struct AppView: View {
                 } else {
                     VStack {
                         TabView(selection: self.$selectedTab) {
-                            RamenListView()
+                            ExploreView()
                                 .tabItem {
                                     Image("explore").renderingMode(.template)
                                     Text("探索")
