@@ -21,13 +21,20 @@ struct PanelItemView<Destination: View>: View {
                     .resizable()
                     .scaledToFit()
                     .accentColor(self.iconColor)
-                    .frame(width: 20, height: 20)
+                    .frame(width: 24, height: 24)
                     .padding([.trailing], 8)
                 Text(self.label)
-                    .font(.system(size: 18))
+                    .font(.system(size: 20))
                     .accentColor(Color(hex: "#333333"))
                 Spacer()
             }
+            .padding(4)
         }
+    }
+}
+
+struct PanelItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        PanelItemView(label: "我的收藏", icon: Image("collections"), iconColor: Color(hex: "#3CBCF7"), destination: CollectionsView())
     }
 }

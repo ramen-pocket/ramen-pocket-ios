@@ -19,7 +19,7 @@ struct CardView<Content: View>: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color(.white))
-                    .shadow(color: Color(.sRGB, hex: "#000000", opacity: 0.1), radius: 3, x: 2, y: 2)
+                    .shadow(color: Color(.sRGB, hex: "#000000", opacity: 0.1), radius: 3, x: 0, y: 2)
                 VStack {
                     self.content
                 }
@@ -34,6 +34,6 @@ struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView {
             Text("Just a text")
-        }
+        }.padding()
     }
 }
