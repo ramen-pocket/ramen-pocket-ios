@@ -23,12 +23,8 @@ struct ExploreView: View {
     
     var body: some View {
         NavigationView {
-            List(stores) { store in
-                NavigationLink(destination: RamenDetailView(store: store)) {
-                    RamenListItem(store: store).padding(12)
-                }
-            }
-            .navigationBarTitle("拉麵清單")
+            RamenListView(stores: stores)
+                .navigationBarTitle("拉麵清單")
         }
         .onAppear {
             self.appState.showLoadingIndicator()
@@ -39,13 +35,13 @@ struct ExploreView: View {
                     self.appState.hideLoadingIndicator()
                 }) { (storeResponse: StoreResponse) in
                     self.stores = storeResponse.stores
-                }
+            }
         }
     }
 }
 
-struct RamenListView_Previews: PreviewProvider {
-
+struct ExploreView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ExploreView()
     }

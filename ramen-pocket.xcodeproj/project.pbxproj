@@ -33,6 +33,7 @@
 		985A8C01247F715B006CF7F9 /* RKWeekdayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BFA247F715B006CF7F9 /* RKWeekdayHeader.swift */; };
 		985A8C03247F71D5006CF7F9 /* SelectDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8C02247F71D5006CF7F9 /* SelectDateView.swift */; };
 		985A8C07247F7BC1006CF7F9 /* SelectStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8C06247F7BC1006CF7F9 /* SelectStoreView.swift */; };
+		B1009141248F622A00972494 /* RamenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1009140248F622A00972494 /* RamenListView.swift */; };
 		B1235E702486906C00C09672 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1235E6F2486906C00C09672 /* ErrorResponse.swift */; };
 		B1534BAE248506F2001EAA88 /* APIService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1534BAD248506F2001EAA88 /* APIService+Profile.swift */; };
 		B1534BB22485083A001EAA88 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1534BB12485083A001EAA88 /* Profile.swift */; };
@@ -118,6 +119,7 @@
 		985A8C02247F71D5006CF7F9 /* SelectDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateView.swift; sourceTree = "<group>"; };
 		985A8C06247F7BC1006CF7F9 /* SelectStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStoreView.swift; sourceTree = "<group>"; };
 		995FD2FB5267DEC6444A9B55 /* Pods-ramen-pocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ramen-pocket.release.xcconfig"; path = "Target Support Files/Pods-ramen-pocket/Pods-ramen-pocket.release.xcconfig"; sourceTree = "<group>"; };
+		B1009140248F622A00972494 /* RamenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListView.swift; sourceTree = "<group>"; };
 		B1235E6F2486906C00C09672 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		B1534BAD248506F2001EAA88 /* APIService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+Profile.swift"; sourceTree = "<group>"; };
 		B1534BB12485083A001EAA88 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				B17333A7246EB213003EAEC8 /* RamenListItemView.swift */,
+				B1009140248F622A00972494 /* RamenListView.swift */,
 			);
 			path = RamenListView;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1009141248F622A00972494 /* RamenListView.swift in Sources */,
 				B1534BAE248506F2001EAA88 /* APIService+Profile.swift in Sources */,
 				B1626FCF248D61920063C6F0 /* Comment.swift in Sources */,
 				446B9E1C247E67D8009F6E30 /* CardView.swift in Sources */,
