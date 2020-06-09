@@ -34,6 +34,6 @@ struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView {
             Text("Just a text")
-        }
+        }.padding()
     }
 }

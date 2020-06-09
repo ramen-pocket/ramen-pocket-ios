@@ -32,3 +32,9 @@ struct PanelItemView<Destination: View>: View {
         }
     }
 }
+
+struct PanelItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        PanelItemView(label: "我的收藏", icon: Image("collections"), iconColor: Color(hex: "#3CBCF7"), destination: CollectionsView())
+    }
+}
