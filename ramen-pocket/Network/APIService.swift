@@ -59,7 +59,7 @@ struct APIService {
         let idToken = preferences.string(forKey: "idToken") ?? ""
         request.addValue(idToken, forHTTPHeaderField: "Authorization")
         
-        Logger.shared.log("[GET] \(request.debugDescription)\n\(request.allHTTPHeaderFields)")
+        Logger.shared.log("[GET] \(request.debugDescription)\n\(String(describing: request.allHTTPHeaderFields))")
 
         return URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
