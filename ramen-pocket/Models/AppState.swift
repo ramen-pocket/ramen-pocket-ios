@@ -14,7 +14,7 @@ class AppState: ObservableObject {
     
     let objectWillChange = PassthroughSubject<AppState, Never>()
     
-    @Published var profile: Profile?
+    @Published var profile: Profile = Profile(userId: "", name: "", avatar: "", points: 0)
 
     var isLoading: Bool = false {
         didSet {

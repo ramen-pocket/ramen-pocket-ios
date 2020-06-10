@@ -7,11 +7,27 @@
 //
 
 import SwiftUI
+import Combine
 
 struct CollectionsView: View {
+    
+    @EnvironmentObject var appState: AppState
+    @State private var stores: [Store] = []
+    @State private var cancellable: AnyCancellable?
+        
     var body: some View {
-        Text("Hello, World!")
-        .navigationBarTitle("我的收藏")
+        RamenListView(stores: stores)
+            .navigationBarTitle("我的收藏")
+            .onAppear {
+                self.appState.showLoadingIndicator()
+                self.cancellable = APIService.shared.userCollections()
+                    .sink(receiveCompletion: { (completion) in
+                        APIService.shared.handleReceiveCompletion(completion)
+                        self.appState.hideLoadingIndicator()
+                    }) { (storeResponse: StoreResponse) in
+                        self.stores = storeResponse.stores
+                }
+        }
     }
 }
 

@@ -11,7 +11,6 @@
 		4468EA92247ED74500026D55 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468EA91247ED74500026D55 /* CommentsView.swift */; };
 		4468EA94247ED7EE00026D55 /* TagManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468EA93247ED7EE00026D55 /* TagManagementView.swift */; };
 		4468EA96247ED80F00026D55 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468EA95247ED80F00026D55 /* SettingsView.swift */; };
-		4468EA98247EDBAC00026D55 /* ProfileDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4468EA97247EDBAC00026D55 /* ProfileDetailView.swift */; };
 		446B9E16247E5477009F6E30 /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B9E15247E5477009F6E30 /* ColorExtention.swift */; };
 		446B9E1A247E60BB009F6E30 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B9E19247E60BB009F6E30 /* StringExtension.swift */; };
 		446B9E1C247E67D8009F6E30 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B9E1B247E67D8009F6E30 /* CardView.swift */; };
@@ -33,6 +32,7 @@
 		985A8C01247F715B006CF7F9 /* RKWeekdayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8BFA247F715B006CF7F9 /* RKWeekdayHeader.swift */; };
 		985A8C03247F71D5006CF7F9 /* SelectDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8C02247F71D5006CF7F9 /* SelectDateView.swift */; };
 		985A8C07247F7BC1006CF7F9 /* SelectStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A8C06247F7BC1006CF7F9 /* SelectStoreView.swift */; };
+		B1009141248F622A00972494 /* RamenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1009140248F622A00972494 /* RamenListView.swift */; };
 		B1235E702486906C00C09672 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1235E6F2486906C00C09672 /* ErrorResponse.swift */; };
 		B1534BAE248506F2001EAA88 /* APIService+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1534BAD248506F2001EAA88 /* APIService+Profile.swift */; };
 		B1534BB22485083A001EAA88 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1534BB12485083A001EAA88 /* Profile.swift */; };
@@ -51,7 +51,7 @@
 		B1626FDC248E57C00063C6F0 /* DebugStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FDB248E57C00063C6F0 /* DebugStrategy.swift */; };
 		B1626FDE248E57E40063C6F0 /* NormalStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1626FDD248E57E40063C6F0 /* NormalStrategy.swift */; };
 		B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1717DD92472C9AB007D351D /* CommentItemView.swift */; };
-		B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A3246EB172003EAEC8 /* RamenListView.swift */; };
+		B17333A4246EB172003EAEC8 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A3246EB172003EAEC8 /* ExploreView.swift */; };
 		B17333A6246EB1DD003EAEC8 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A5246EB1DD003EAEC8 /* Store.swift */; };
 		B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A7246EB213003EAEC8 /* RamenListItemView.swift */; };
 		B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A9246EB243003EAEC8 /* RamenDetailView.swift */; };
@@ -92,7 +92,6 @@
 		4468EA91247ED74500026D55 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		4468EA93247ED7EE00026D55 /* TagManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagManagementView.swift; sourceTree = "<group>"; };
 		4468EA95247ED80F00026D55 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		4468EA97247EDBAC00026D55 /* ProfileDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailView.swift; sourceTree = "<group>"; };
 		446B9E15247E5477009F6E30 /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
 		446B9E19247E60BB009F6E30 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		446B9E1B247E67D8009F6E30 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -118,6 +117,7 @@
 		985A8C02247F71D5006CF7F9 /* SelectDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateView.swift; sourceTree = "<group>"; };
 		985A8C06247F7BC1006CF7F9 /* SelectStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStoreView.swift; sourceTree = "<group>"; };
 		995FD2FB5267DEC6444A9B55 /* Pods-ramen-pocket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ramen-pocket.release.xcconfig"; path = "Target Support Files/Pods-ramen-pocket/Pods-ramen-pocket.release.xcconfig"; sourceTree = "<group>"; };
+		B1009140248F622A00972494 /* RamenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListView.swift; sourceTree = "<group>"; };
 		B1235E6F2486906C00C09672 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		B1534BAD248506F2001EAA88 /* APIService+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+Profile.swift"; sourceTree = "<group>"; };
 		B1534BB12485083A001EAA88 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		B1626FDB248E57C00063C6F0 /* DebugStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugStrategy.swift; sourceTree = "<group>"; };
 		B1626FDD248E57E40063C6F0 /* NormalStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalStrategy.swift; sourceTree = "<group>"; };
 		B1717DD92472C9AB007D351D /* CommentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItemView.swift; sourceTree = "<group>"; };
-		B17333A3246EB172003EAEC8 /* RamenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListView.swift; sourceTree = "<group>"; };
+		B17333A3246EB172003EAEC8 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		B17333A5246EB1DD003EAEC8 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B17333A7246EB213003EAEC8 /* RamenListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListItemView.swift; sourceTree = "<group>"; };
 		B17333A9246EB243003EAEC8 /* RamenDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenDetailView.swift; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 		4471E597247ED4D30063CCE2 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				B17333A3246EB172003EAEC8 /* RamenListView.swift */,
+				B17333A3246EB172003EAEC8 /* ExploreView.swift */,
 				B17333A9246EB243003EAEC8 /* RamenDetailView.swift */,
 				B1626FD2248D89870063C6F0 /* RamenCommentsView.swift */,
 				B1626FC7248D2A4F0063C6F0 /* RamenImagesView.swift */,
@@ -236,7 +236,6 @@
 				B1B32A2224852536002EAA47 /* LoginView.swift */,
 				4468EA93247ED7EE00026D55 /* TagManagementView.swift */,
 				4468EA95247ED80F00026D55 /* SettingsView.swift */,
-				4468EA97247EDBAC00026D55 /* ProfileDetailView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -245,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				B17333A7246EB213003EAEC8 /* RamenListItemView.swift */,
+				B1009140248F622A00972494 /* RamenListView.swift */,
 			);
 			path = RamenListView;
 			sourceTree = "<group>";
@@ -713,6 +713,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1009141248F622A00972494 /* RamenListView.swift in Sources */,
 				B1534BAE248506F2001EAA88 /* APIService+Profile.swift in Sources */,
 				B1626FCF248D61920063C6F0 /* Comment.swift in Sources */,
 				446B9E1C247E67D8009F6E30 /* CardView.swift in Sources */,
@@ -726,8 +727,9 @@
 				B1626FD7248E46500063C6F0 /* LoggerStrategy.swift in Sources */,
 				B1B32A21248523AE002EAA47 /* AppState.swift in Sources */,
 				44AEF06F247A4E0F004046D4 /* ProfileView.swift in Sources */,
-				B17333A4246EB172003EAEC8 /* RamenListView.swift in Sources */,
+				B17333A4246EB172003EAEC8 /* ExploreView.swift in Sources */,
 				B1626FD5248D92C50063C6F0 /* RatingView.swift in Sources */,
+				B17333A4246EB172003EAEC8 /* ExploreView.swift in Sources */,
 				985A8C03247F71D5006CF7F9 /* SelectDateView.swift in Sources */,
 				B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */,
 				4471E594247EBCA40063CCE2 /* PanelItemView.swift in Sources */,
@@ -757,7 +759,6 @@
 				985A8BFD247F715B006CF7F9 /* RKManager.swift in Sources */,
 				B1626FC5248B7DCF0063C6F0 /* ImageLoader.swift in Sources */,
 				B1626FD3248D89870063C6F0 /* RamenCommentsView.swift in Sources */,
-				4468EA98247EDBAC00026D55 /* ProfileDetailView.swift in Sources */,
 				B1E9C6632446F22400933874 /* AppView.swift in Sources */,
 				B1D7FD722487EDC2000473F8 /* ActivityIndicator.swift in Sources */,
 				985A8BEC247F6EBB006CF7F9 /* Plan.swift in Sources */,
