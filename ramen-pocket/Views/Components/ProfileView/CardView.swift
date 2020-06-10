@@ -15,18 +15,16 @@ struct CardView<Content: View>: View {
     }
     
     var body: some View {
-        VStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color(.white))
-                    .shadow(color: Color(.sRGB, hex: "#000000", opacity: 0.1), radius: 3, x: 0, y: 2)
-                VStack {
-                    self.content
-                }
-                .padding()
-                .cornerRadius(1)
+        ZStack {
+            VStack {
+                self.content
             }
+            .padding()
+            .cornerRadius(1)
         }
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(color: Color(.sRGB, hex: "#000000", opacity: 0.1), radius: 3, x: 0, y: 2)
     }
 }
 

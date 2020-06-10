@@ -39,8 +39,8 @@ struct ProfileView: View {
                     }
                     .padding(12)
                 }
-                .padding(.bottom, 32)
                 .frame(maxHeight: 100)
+                .padding(.bottom, 16)
                 
                 CardView {
                     VStack {
@@ -57,7 +57,7 @@ struct ProfileView: View {
                             }
                         )
                         
-                        Spacer()
+//                        Spacer()
                     }
                 }
                 Spacer()
