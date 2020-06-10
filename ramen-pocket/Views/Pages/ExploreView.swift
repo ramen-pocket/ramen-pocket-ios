@@ -23,8 +23,35 @@ struct ExploreView: View {
     
     var body: some View {
         NavigationView {
-            RamenListView(stores: stores)
-                .navigationBarTitle("拉麵清單")
+            VStack {
+                HStack(spacing: 24) {
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                        .foregroundColor(Color.init(hex: "#999999"))
+                        .frame(width: 64, height: 64)
+                        .padding(.horizontal, 22)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("找不到喜歡的拉麵嗎？")
+                            .font(.system(size:16))
+                            .foregroundColor(Color.init(hex: "#666666"))
+                        Text("新增拉麵店")
+                            .font(.system(size:16))
+                            .foregroundColor(Color.init(hex: "#666666"))
+                    }
+                    Spacer()
+                }
+                .padding(.top, 18)
+                .padding(.bottom, 18)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.init(hex: "#CCCCCC"), lineWidth: 1)
+                )
+                .padding(.top, 12)
+                .padding(.horizontal, 32)
+                                
+                RamenListView(stores: stores)
+                    .navigationBarTitle("拉麵清單")
+            }
         }
         .onAppear {
             self.appState.showLoadingIndicator()
