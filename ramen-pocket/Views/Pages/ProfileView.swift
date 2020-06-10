@@ -16,37 +16,31 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 8) {
-                NavigationLink(destination: ProfileDetailView()) {
-                    CardView {
-                        HStack {
-                            VStack (alignment: .leading, spacing: 4) {
-                                Text("名字字")
-                                    .fontWeight(.black)
-                                    .font(.system(size: 24))
-                                Text("厲害的稱號")
-                                    .fontWeight(.light)
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color(hex: "#aaaaaa"))
-                            }
-                            Spacer()
-                            Image("profile")
-                                .resizable()
-                                .scaledToFill()
-                                .padding(12)
-                                .frame(width: 56, height: 56)
-                                .background(Color(hex: "#b3e5fc"))
-                                .cornerRadius(28)
-                                .clipped()
-                            Image("arrow-ios-forward")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 24, height: 24)
-                                .opacity(0.7)
+                CardView {
+                    HStack {
+                        VStack (alignment: .leading, spacing: 4) {
+                            Text(appState.profile.name)
+                                .fontWeight(.black)
+                                .font(.system(size: 24))
+                            Text("積分：\(appState.profile.points)")
+                                .fontWeight(.light)
+                                .font(.system(size: 14))
+                                .foregroundColor(Color(hex: "#aaaaaa"))
                         }
+                        Spacer()
+                        Image("profile")
+                            .resizable()
+                            .scaledToFill()
+                            .padding(12)
+                            .frame(width: 56, height: 56)
+                            .background(Color(hex: "#b3e5fc"))
+                            .cornerRadius(28)
+                            .clipped()
                     }
-                    .frame(maxHeight: 100)
+                    .padding(12)
                 }
-                .accentColor(.black)
+                .padding(.bottom, 32)
+                .frame(maxHeight: 100)
                 
                 CardView {
                     VStack {
