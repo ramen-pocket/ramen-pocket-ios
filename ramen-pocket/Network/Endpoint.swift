@@ -14,9 +14,9 @@ public enum Endpoint {
     case stores, storeComments(storeId: Int, recordId: Int? = nil)
     
     //MARK: - User -
-    case userProfile(userId: Int? = nil)
-    case userCollections(storeId: Int? = nil, userId: Int? = nil)
-    case userComments(userId: Int? = nil)
+    case userProfile(userId: String? = nil)
+    case userCollections(storeId: Int? = nil, userId: String? = nil)
+    case userComments(userId: String? = nil)
 }
 
 //MARK: - endpoint extension for url -
@@ -45,7 +45,7 @@ extension Endpoint {
             } else if (storeId == nil && userId != nil) {
                 return "users/:id/collections"
             } else {
-                return "users/collections"
+                return "user/collections"
             }
         case .userComments(userId: let userId):
             if (userId != nil) {

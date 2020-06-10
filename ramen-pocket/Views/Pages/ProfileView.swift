@@ -7,9 +7,11 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ProfileView: View {
     @EnvironmentObject private var appState: AppState
+    @State private var cancellable: AnyCancellable?
     
     var body: some View {
         NavigationView {
@@ -68,6 +70,16 @@ struct ProfileView: View {
             }
             .padding()
             .navigationBarTitle("個人")
+        }
+        .onAppear() {
+            self.appState.showLoadingIndicator()
+            self.cancellable = APIService.shared.profile(idToken: self.appState.idToken)
+                .sink(receiveCompletion: { (completion) in
+                    APIService.shared.handleReceiveCompletion(completion)
+                    self.appState.hideLoadingIndicator()
+                }) { (profile: Profile) in
+                    self.appState.profile = profile
+            }
         }
     }
 }

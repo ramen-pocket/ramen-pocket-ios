@@ -29,7 +29,7 @@ struct Store: Codable, Identifiable {
 struct BusinessHour: Codable {
     let off: Bool
     let begin: Double
-    let end: Int
+    let end: Double
 }
 
 // MARK: - Course

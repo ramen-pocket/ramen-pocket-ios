@@ -15,4 +15,7 @@ extension APIService {
         return self.get(endpoint: .stores)
     }
     
+    func userCollections() -> AnyPublisher<StoreResponse, Error> {
+        return self.get(endpoint: .userCollections())
+    }
 }
