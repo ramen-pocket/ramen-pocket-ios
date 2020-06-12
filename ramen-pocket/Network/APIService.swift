@@ -32,7 +32,7 @@ struct APIService {
         }
     }
     
-    public func get<T: Decodable>(endpoint: Endpoint, params: [String: String]? = nil,  headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
+    func get<T: Decodable>(endpoint: Endpoint, params: [String: String]? = nil,  headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
         let queryURL = baseURL.appendingPathComponent(endpoint.path())
         var components = URLComponents(url: queryURL, resolvingAgainstBaseURL: true)!
         if let params = params {
@@ -104,7 +104,7 @@ struct APIService {
             .eraseToAnyPublisher()
     }
     
-    public func post<T: Decodable>(endpoint: Endpoint, jsonObject: [String: String]? = nil, headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
+    func post<T: Decodable>(endpoint: Endpoint, jsonObject: [String: String]? = nil, headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
         let queryURL = baseURL.appendingPathComponent(endpoint.path())
         let components = URLComponents(url: queryURL, resolvingAgainstBaseURL: true)!
         var request = URLRequest(url: components.url!)
