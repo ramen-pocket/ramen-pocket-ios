@@ -10,12 +10,17 @@ import SwiftUI
 
 struct RamenListView: View {
     
-    var stores: [Store] = []
+    var stores: [Store]
     
     var body: some View {
-        List(stores) { store in
-            NavigationLink(destination: RamenDetailView(store: store)) {
-                RamenListItem(store: store).padding(12)
+        List {
+            RamenAddingItemView()
+                .padding(.top, 12)
+            
+            ForEach(self.stores) { store in
+                NavigationLink(destination: RamenDetailView(store: store)) {
+                    RamenListItem(store: store).padding(12)
+                }
             }
         }
     }

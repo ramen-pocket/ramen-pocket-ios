@@ -56,6 +56,7 @@
 		B17333A8246EB213003EAEC8 /* RamenListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A7246EB213003EAEC8 /* RamenListItemView.swift */; };
 		B17333AA246EB243003EAEC8 /* RamenDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17333A9246EB243003EAEC8 /* RamenDetailView.swift */; };
 		B17B48BF2487EF9A003F6D99 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B48BE2487EF9A003F6D99 /* ActivityIndicatorView.swift */; };
+		B1A1F6CD24938C860023CA61 /* RamenAddingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1F6CC24938C860023CA61 /* RamenAddingItemView.swift */; };
 		B1B32A21248523AE002EAA47 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B32A20248523AE002EAA47 /* AppState.swift */; };
 		B1B32A2324852536002EAA47 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B32A2224852536002EAA47 /* LoginView.swift */; };
 		B1D7FD722487EDC2000473F8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7FD712487EDC2000473F8 /* ActivityIndicator.swift */; };
@@ -141,6 +142,7 @@
 		B17333A7246EB213003EAEC8 /* RamenListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenListItemView.swift; sourceTree = "<group>"; };
 		B17333A9246EB243003EAEC8 /* RamenDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenDetailView.swift; sourceTree = "<group>"; };
 		B17B48BE2487EF9A003F6D99 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		B1A1F6CC24938C860023CA61 /* RamenAddingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenAddingItemView.swift; sourceTree = "<group>"; };
 		B1B32A20248523AE002EAA47 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B1B32A2224852536002EAA47 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B1D7FD712487EDC2000473F8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				B17333A7246EB213003EAEC8 /* RamenListItemView.swift */,
+				B1A1F6CC24938C860023CA61 /* RamenAddingItemView.swift */,
 				B1009140248F622A00972494 /* RamenListView.swift */,
 			);
 			path = RamenListView;
@@ -750,6 +753,7 @@
 				B1E9C6612446F22300933874 /* SceneDelegate.swift in Sources */,
 				B1717DDA2472C9AB007D351D /* CommentItemView.swift in Sources */,
 				B1624CE8247FF6C400502C49 /* Endpoint.swift in Sources */,
+				B1A1F6CD24938C860023CA61 /* RamenAddingItemView.swift in Sources */,
 				B17B48BF2487EF9A003F6D99 /* ActivityIndicatorView.swift in Sources */,
 				B1B32A2324852536002EAA47 /* LoginView.swift in Sources */,
 				446B9E16247E5477009F6E30 /* ColorExtention.swift in Sources */,
