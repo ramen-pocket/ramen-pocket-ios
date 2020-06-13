@@ -32,6 +32,7 @@ struct APIService {
         }
     }
     
+    //MARK: -GET-
     func get<T: Decodable>(endpoint: Endpoint, params: [String: String]? = nil,  headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
         
         let queryURL = baseURL.appendingPathComponent(endpoint.path())
@@ -81,6 +82,7 @@ struct APIService {
         .eraseToAnyPublisher()
     }
     
+    //MARK: -POST-
     func post<T: Decodable>(endpoint: Endpoint, jsonObject: [String: String]? = nil, headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
         
         let queryURL = baseURL.appendingPathComponent(endpoint.path())
