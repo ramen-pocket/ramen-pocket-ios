@@ -48,17 +48,11 @@ struct APIService {
         }
         
         // Add headers
-        if let headers = headers {
-            for (key, value) in headers {
-                request.addValue(value, forHTTPHeaderField: key)
-            }
-        }
+        request = buildRequestWithHeader(request: request, headers: headers)
         
         // Set dateDecodingStrategy to iso8601 for decoding date format in JSON
-        let decoder = JSONDecoder()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        let decoder = JSONDecoder(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+
         
         // Add authorization header if exist
         let preferences = UserDefaults.standard
@@ -101,19 +95,10 @@ struct APIService {
         }
         
         // Add headers
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        if let headers = headers {
-            for (key, value) in headers {
-                request.addValue(value, forHTTPHeaderField: key)
-            }
-        }
+        request = buildPostRequestWithHeader(request: request, headers: headers)
         
         // Set dateDecodingStrategy to iso8601 for decoding date format in JSON
-        let decoder = JSONDecoder()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        let decoder = JSONDecoder(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
         
         Logger.shared.log("[POST] \(request.debugDescription)\n\(String(describing: request.allHTTPHeaderFields))")
         
@@ -130,6 +115,31 @@ struct APIService {
         }
         .receive(on: DispatchQueue.main)
         .eraseToAnyPublisher()
+    }
+    
+    private func buildRequestWithHeader(request: URLRequest, headers: [String: String]?) -> URLRequest {
+        var request = request
+        if let headers = headers {
+            for (key, value) in headers {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
+        return request
+    }
+    
+    private func buildPostRequestWithHeader(request: URLRequest, headers: [String: String]?) -> URLRequest {
+        var request = request
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        return buildRequestWithHeader(request: request, headers: headers)
+    }
+    
+    private func buildJSONDecoderWithDateFromat(dateFormat: String) -> JSONDecoder {
+        let decoder = JSONDecoder()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        return decoder
     }
     
     private func handleResponse(_ output: URLSession.DataTaskPublisher.Output) throws -> Data {
