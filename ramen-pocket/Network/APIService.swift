@@ -117,6 +117,7 @@ struct APIService {
         .eraseToAnyPublisher()
     }
     
+    
     private func buildRequestWithHeader(request: URLRequest, headers: [String: String]?) -> URLRequest {
         var request = request
         if let headers = headers {
