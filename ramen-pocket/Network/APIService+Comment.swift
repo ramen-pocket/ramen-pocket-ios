@@ -7,6 +7,7 @@
 //
 
 import Combine
+import Foundation
 
 extension APIService {
     
@@ -14,4 +15,16 @@ extension APIService {
         return self.get(endpoint: .storeComments(storeId: storeId))
     }
     
+    func postStoreComment(_ storeId: Int, postComment: PostComment) -> AnyPublisher<Data, Error> {
+        do {
+            let jsonEncoder = JSONEncoder()
+            let jsonData = try jsonEncoder.encode(postComment)
+            return self.post(endpoint: .storeComments(storeId: storeId), jsonData: jsonData)
+
+        } catch let error {
+            print(error)
+            return self.post(endpoint: .storeComments(storeId: storeId))
+        }
+
+    }
 }

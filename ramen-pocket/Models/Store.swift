@@ -16,7 +16,7 @@ struct StoreResponse: Codable {
 struct Store: Codable, Identifiable {
     let id: Int
     let name: String
-    let isDeleted, isCollected: Bool
+    let isCollected: Bool
     let location: Location
     let rate: Double
     let featuredImage: String

@@ -57,7 +57,7 @@ struct RamenListItem: View {
 
 struct RamenListItem_Previews: PreviewProvider {
     
-    static let store: Store = Store(id: 1, name: "Test", isDeleted: false, isCollected: true, location: Location(address: "", lat: 0, lng: 0), rate: 5, featuredImage: "", images: [""], businessHours: [], courses: [])
+    static let store: Store = Store(id: 1, name: "Test", isCollected: true, location: Location(address: "", lat: 0, lng: 0), rate: 5, featuredImage: "", images: [""], businessHours: [], courses: [])
     
     static var previews: some View {
         RamenListItem(store: store)
