@@ -20,12 +20,12 @@ struct CommentItem: View {
                     Text(comment.user.name)
                 }
                 HStack {
-                    RatingView(rating: .constant(Int(comment.records[0].rate)))
-                    Text(convertDate(date: comment.records[0].publishedAt))
+                    RatingView(rating: .constant(Int(comment.records.last!.rate)))
+                    Text(convertDate(date: comment.records.last!.publishedAt))
                         .lineLimit(1)
                         .foregroundColor(Color.init(hex: "#333333"))
                 }
-                Text(comment.records[0].content)
+                Text(comment.records.last!.content)
                     .foregroundColor(Color.init(hex: "#333333"))
                 
             }
@@ -45,6 +45,6 @@ struct CommentItem: View {
 
 struct CommentItem_Previews: PreviewProvider {
     static var previews: some View {
-        CommentItem(comment: Comment(user: User(name: "Andy", avatar: "https://lh3.googleusercontent.com/a-/AOh14GgyqaWVV0q9efcQOGlEHTnaW49DCjKRpCQZADOX-N8=s96-c", points: 4), records: [Record(id: 1, isDeleted: false, content: "Test", courses: [], rate: 4.6, publishedAt: Date())]))
+        CommentItem(comment: Comment(user: User(name: "Andy", avatar: "https://lh3.googleusercontent.com/a-/AOh14GgyqaWVV0q9efcQOGlEHTnaW49DCjKRpCQZADOX-N8=s96-c", points: 4), records: [Record(id: 1, content: "Test", courses: [], rate: 4.6, publishedAt: Date())]))
     }
 }

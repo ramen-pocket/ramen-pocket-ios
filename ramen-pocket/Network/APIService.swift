@@ -52,7 +52,7 @@ struct APIService {
         
         // Set dateDecodingStrategy to iso8601 for decoding date format in JSON
         let decoder = JSONDecoder(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
-
+        
         
         // Add authorization header if exist
         let preferences = UserDefaults.standard
@@ -77,28 +77,24 @@ struct APIService {
     }
     
     //MARK: -POST-
-    func post<T: Decodable>(endpoint: Endpoint, jsonObject: [String: String]? = nil, headers: [String: String]? = nil) -> AnyPublisher<T, Error> {
+    func post(endpoint: Endpoint, jsonData: Data? = nil, headers: [String: String]? = nil) -> AnyPublisher<Data, Error> {
         
         let queryURL = baseURL.appendingPathComponent(endpoint.path())
         let components = URLComponents(url: queryURL, resolvingAgainstBaseURL: true)!
         var request = URLRequest(url: components.url!)
         request.httpMethod = "POST"
-
         
         // Add JSON body
-        if let jsonObject = jsonObject {
-            do {
-                request.httpBody = try JSONSerialization.data(withJSONObject: jsonObject, options: JSONSerialization.WritingOptions())
-            } catch let error{
-                print(error)
-            }
+        if let jsonData = jsonData {
+            request.httpBody = jsonData
         }
         
         // Add headers
         request = buildPostRequestWithHeader(request: request, headers: headers)
-        
-        // Set dateDecodingStrategy to iso8601 for decoding date format in JSON
-        let decoder = JSONDecoder(dateFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+        // Add authorization header if exist
+        let preferences = UserDefaults.standard
+        let idToken = preferences.string(forKey: "idToken") ?? ""
+        request.addValue(idToken, forHTTPHeaderField: "Authorization")
         
         Logger.shared.log("[POST] \(request.debugDescription)\n\(String(describing: request.allHTTPHeaderFields))")
         
@@ -108,10 +104,6 @@ struct APIService {
         }
         .mapError { error in
             return APIError.apiError(reason: error.localizedDescription)
-        }
-        .decode(type: T.self, decoder: decoder)
-        .mapError { error in
-            return self.handleDecodeError(error: error)
         }
         .receive(on: DispatchQueue.main)
         .eraseToAnyPublisher()

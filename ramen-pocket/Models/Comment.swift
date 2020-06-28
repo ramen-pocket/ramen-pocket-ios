@@ -9,21 +9,20 @@
 import Foundation
 
 // MARK: - CommentResponse
-struct CommentResponse: Decodable {
+struct CommentResponse: Codable {
     let comments: [Comment]
 }
 
 // MARK: - Comment
-struct Comment: Decodable, Identifiable {
+struct Comment: Codable, Identifiable {
     let id = UUID()
     let user: User
     let records: [Record]
 }
 
 // MARK: - Record
-struct Record: Decodable {
+struct Record: Codable {
     let id: Int
-    let isDeleted: Bool
     let content: String
     let courses: [String]
     let rate: Double
@@ -31,7 +30,7 @@ struct Record: Decodable {
 }
 
 // MARK: - User
-struct User: Decodable {
+struct User: Codable {
     let name: String
     let avatar: String
     let points: Int

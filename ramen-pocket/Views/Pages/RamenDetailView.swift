@@ -130,6 +130,17 @@ struct RamenDetailView: View {
                 }
                 
             }
+            NavigationLink(destination: AddCommentView(storeId: store.id)) {
+                Text("我要評論")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .font(.system(size: 18))
+                    .foregroundColor(Color.init(hex: "#333333"))
+                    .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 6)
+                            .stroke(Color.init(hex: "#333333"), lineWidth: 2)
+                )
+            }
             //            CommentItem(author: "DevilTea", message: "蝦味很濃，值得一試")
             
         }
@@ -170,9 +181,9 @@ struct RamenDetailView: View {
 
 struct RamenDetailView_Previews: PreviewProvider {
     
-    static let store: Store = Store(id: 1, name: "", isDeleted: false, isCollected: true, location: Location(address: "", lat: 0, lng: 0), rate: 5, featuredImage: "", images: [""], businessHours: [], courses: [])
+    static let store: Store = Store(id: 1, name: "", isCollected: true, location: Location(address: "", lat: 0, lng: 0), rate: 5, featuredImage: "", images: [""], businessHours: [], courses: [])
     
     static var previews: some View {
-        RamenDetailView(store: store)
+        RamenDetailView(store: store).environmentObject(AppState())
     }
 }

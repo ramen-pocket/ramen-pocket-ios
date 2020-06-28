@@ -58,6 +58,9 @@
 		B17B48BF2487EF9A003F6D99 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B48BE2487EF9A003F6D99 /* ActivityIndicatorView.swift */; };
 		B1A1F6CD24938C860023CA61 /* RamenAddingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1F6CC24938C860023CA61 /* RamenAddingItemView.swift */; };
 		B1A1F6CF2494C25B0023CA61 /* JSONDecoderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1F6CE2494C25B0023CA61 /* JSONDecoderExtension.swift */; };
+		B1A1F6D1249E44DA0023CA61 /* AddCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1F6D0249E44DA0023CA61 /* AddCommentView.swift */; };
+		B1A1F6D3249E5EBB0023CA61 /* MultilineTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1F6D2249E5EBA0023CA61 /* MultilineTextFieldView.swift */; };
+		B1A1F6D524A364940023CA61 /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A1F6D424A364940023CA61 /* PostComment.swift */; };
 		B1B32A21248523AE002EAA47 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B32A20248523AE002EAA47 /* AppState.swift */; };
 		B1B32A2324852536002EAA47 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B32A2224852536002EAA47 /* LoginView.swift */; };
 		B1D7FD722487EDC2000473F8 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D7FD712487EDC2000473F8 /* ActivityIndicator.swift */; };
@@ -145,6 +148,9 @@
 		B17B48BE2487EF9A003F6D99 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		B1A1F6CC24938C860023CA61 /* RamenAddingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamenAddingItemView.swift; sourceTree = "<group>"; };
 		B1A1F6CE2494C25B0023CA61 /* JSONDecoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderExtension.swift; sourceTree = "<group>"; };
+		B1A1F6D0249E44DA0023CA61 /* AddCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentView.swift; sourceTree = "<group>"; };
+		B1A1F6D2249E5EBA0023CA61 /* MultilineTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextFieldView.swift; sourceTree = "<group>"; };
+		B1A1F6D424A364940023CA61 /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
 		B1B32A20248523AE002EAA47 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B1B32A2224852536002EAA47 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B1D7FD712487EDC2000473F8 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -232,6 +238,7 @@
 			children = (
 				B17333A3246EB172003EAEC8 /* ExploreView.swift */,
 				B17333A9246EB243003EAEC8 /* RamenDetailView.swift */,
+				B1A1F6D0249E44DA0023CA61 /* AddCommentView.swift */,
 				B1626FD2248D89870063C6F0 /* RamenCommentsView.swift */,
 				B1626FC7248D2A4F0063C6F0 /* RamenImagesView.swift */,
 				44AEF070247A50D5004046D4 /* PlanningView.swift */,
@@ -353,6 +360,7 @@
 				B1534BB12485083A001EAA88 /* Profile.swift */,
 				B1235E6F2486906C00C09672 /* ErrorResponse.swift */,
 				985A8BEB247F6EBB006CF7F9 /* Plan.swift */,
+				B1A1F6D424A364940023CA61 /* PostComment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 		B1D7FD732487EDD6000473F8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B1A1F6D2249E5EBA0023CA61 /* MultilineTextFieldView.swift */,
 				B1D7FD712487EDC2000473F8 /* ActivityIndicator.swift */,
 				B17B48BE2487EF9A003F6D99 /* ActivityIndicatorView.swift */,
 				B1626FC2248B7D8C0063C6F0 /* RemoteImageView.swift */,
@@ -747,6 +756,7 @@
 				4471E59B247ED6C00063CCE2 /* CollectionsView.swift in Sources */,
 				B1A1F6CF2494C25B0023CA61 /* JSONDecoderExtension.swift in Sources */,
 				B1626FDE248E57E40063C6F0 /* NormalStrategy.swift in Sources */,
+				B1A1F6D3249E5EBB0023CA61 /* MultilineTextFieldView.swift in Sources */,
 				4468EA94247ED7EE00026D55 /* TagManagementView.swift in Sources */,
 				B1534BB22485083A001EAA88 /* Profile.swift in Sources */,
 				B1626FDA248E48990063C6F0 /* Logger.swift in Sources */,
@@ -772,8 +782,10 @@
 				985A8BEC247F6EBB006CF7F9 /* Plan.swift in Sources */,
 				B1626FC3248B7D8C0063C6F0 /* RemoteImageView.swift in Sources */,
 				985A8BEA247F6E7E006CF7F9 /* PlanningItemView.swift in Sources */,
+				B1A1F6D524A364940023CA61 /* PostComment.swift in Sources */,
 				985A8C00247F715B006CF7F9 /* RKDate.swift in Sources */,
 				4468EA96247ED80F00026D55 /* SettingsView.swift in Sources */,
+				B1A1F6D1249E44DA0023CA61 /* AddCommentView.swift in Sources */,
 				B1235E702486906C00C09672 /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
